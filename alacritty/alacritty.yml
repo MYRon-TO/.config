@@ -1,0 +1,44 @@
+live_config_reload: true
+
+env:
+  TERM: xterm-256color
+
+# ColorScheme
+import:
+  # uncomment the flavour you want below:
+ - ~/.config/alacritty/catppuccin/catppuccin-mocha.yml
+ # - ~/.config/alacritty/catppuccin/catppuccin-macchiato.yml
+ # - ~/.config/alacritty/catppuccin/catppuccin-frappe.yml
+ # - ~/.config/alacritty/catppuccin/catppuccin-latte.yml
+window:
+  opacity: 0.5
+
+# Font
+font:
+  size: 10.0
+  normal:
+    family: "SauceCodePro Nerd Font"
+    style: Regular
+  bold:
+    family: "SauceCodePro Nerd Font"
+    style: Bold
+  italic:
+    family: "SauceCodePro Nerd Font"
+    style: Italic
+  bold_italic:
+    family: "SauceCodePro Nerd Font"
+    style: Bold Italic
+
+# Window
+padding:
+  x: 0
+  y: 0
+
+glyph_offset:
+  x: 0
+  y: 0
+
+offset:
+  x: 0
+  y: 0
+
