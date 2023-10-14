@@ -112,6 +112,7 @@ keymap = [
 	{ on = [ "g", "r" ],       exec = "cd /",                              desc = "Go to the root" },
 	{ on = [ "g", "c" ],       exec = "cd ~/.config",                      desc = "Go to the config directory" },
 	{ on = [ "g", "C" ],       exec = "cd ~/Code",                         desc = "Go to the Code directory" },
+	{ on = [ "g", "G" ],       exec = "cd ~/Git",                         desc = "Go to the Git directory" },
 	{ on = [ "g", "v" ],       exec = "cd ~/Documents/Obsidian_Vault",     desc = "Go to the Obsidian_Vault" },
 	{ on = [ "g", "d" ],       exec = "cd ~/Downloads",                    desc = "Go to the downloads directory" },
 	{ on = [ "g", "t" ],       exec = "cd /tmp",                           desc = "Go to the temporary directory" },
