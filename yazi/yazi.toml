@@ -1,7 +1,7 @@
 [manager]
 layout         = [ 1, 4, 3 ]
-sort_by        = "modified"
-sort_sensitive = true
+sort_by        = "natural"
+sort_sensitive = false
 sort_reverse   = false
 sort_dir_first = true
 show_hidden    = false
@@ -15,31 +15,31 @@ cache_dir  = ""
 
 [opener]
 folder = [
-	# { exec = 'open -R "$@"', display_name = "Reveal in Finder" },
-	{ exec = 'xdg-open "$@"', display_name = "Reveal in Finder" },
+	# { exec = 'open -R "$@"', desc = "Reveal in Finder" },
+	{ exec = 'xdg-open "$@"', desc = "Reveal in Finder" },
 	{ exec = '$EDITOR "$@"' },
 ]
 archive = [
-	{ exec = 'unar "$1"', display_name = "Extract here" },
+	{ exec = 'unar "$1"', desc = "Extract here" },
 ]
 text = [
 	{ exec = '$EDITOR "$@"', block = true },
 ]
 image = [
-	{ exec = 'xdg-open "$@"', display_name = "Open" },
-	{ exec = '''exiftool "$1"; echo "Press enter to exit"; read''', block = true, display_name = "Show EXIF" },
+	{ exec = 'xdg-open "$@"', desc = "Open" },
+	{ exec = '''exiftool "$1"; echo "Press enter to exit"; read''', block = true, desc = "Show EXIF" },
 ]
 video = [
 	{ exec = 'mpv "$@"' },
-	{ exec = '''mediainfo "$1"; echo "Press enter to exit"; read''', block = true, display_name = "Show media info" },
+	{ exec = '''mediainfo "$1"; echo "Press enter to exit"; read''', block = true, desc = "Show media info" },
 ]
 audio = [
 	{ exec = 'mpv "$@"' },
-	{ exec = '''mediainfo "$1"; echo "Press enter to exit"; read''', block = true, display_name = "Show media info" },
+	{ exec = '''mediainfo "$1"; echo "Press enter to exit"; read''', block = true, desc = "Show media info" },
 ]
 fallback = [
-	{ exec = 'xdg-open "$@"', display_name = "Open" },
-	# { exec = 'open -R "$@"', display_name = "Reveal in Finder" },
+	{ exec = 'xdg-open "$@"', desc = "Open" },
+	# { exec = 'open -R "$@"', desc = "Reveal in Finder" },
 ]
 
 [open]
@@ -63,12 +63,14 @@ rules = [
 	{ mime = "application/x-7z-compressed", use = "archive" },
 	{ mime = "application/x-rar", use = "archive" },
 
-	{ mime = "*", use = "fallback" },
-
+	{ name = "*.C", use = "text" },
+	{ name = "*.H", use = "text" },
 	{ name = "*.lua", use = "text" },
 	{ name = "*.py", use = "text" },
 	{ name = "*.html", use = "text" },
 	{ name = "*.sh", use = "text" },
+
+	{ mime = "*", use = "fallback" },
 ]
 
 [tasks]

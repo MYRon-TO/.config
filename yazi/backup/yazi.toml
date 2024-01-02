@@ -56,6 +56,8 @@ rules = [
 	{ mime = "application/zip", use = "archive" },
 	{ mime = "application/x-7z-compressed", use = "archive" },
 
+	{ mime = "*.C", use = "text" },
+	{ mime = "*.H", use = "text" },
 	{ mime = "*", use = "fallback" },
 ]
 
