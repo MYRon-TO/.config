@@ -35,6 +35,10 @@ tooltip label {
   margin-top: 10px;
   margin-bottom: 10px;
   padding-bottom: 10px;
+
+  /* border-width: 1px; */
+  /* border-style: solid; */
+  /* border-color: #7e9cd8; */
 }
 
 #workspaces {
@@ -44,6 +48,10 @@ tooltip label {
   padding-top: 10px;
   border-radius: 20px;
   padding-bottom: 10px;
+
+  /* border-width: 1px; */
+  /* border-style: solid; */
+  /* border-color: #7e9cd8; */
 }
 
 #workspaces button {
@@ -66,9 +74,7 @@ tooltip label {
 
 #workspaces button:hover {
     background: #1f1f28;
-    border-color: #1f1f28;
-    color: #7e9cd8;
-    border-radius: 20px;
+    border-radius: 30px;
 }
 
 #custom-spotify {
@@ -84,7 +90,6 @@ tooltip label {
   /* background: #16161d; */
   border-radius: 0px;
 }
-
 
 /* #network, #pulseaudio, #battery, #custom-calendar-icon, #clock,#custom-randwall, #custom-time-icon { */
 /*   padding-top: 15px; */

@@ -17,7 +17,7 @@ while true; do
     fi
 done
 
-swww img /home/Myron/Pictures/wallpaper/${Allpaper[$Newpaper]} --transition-type outer --transition-pos 0,0
+swww img /home/Myron/Pictures/wallpaper/${Allpaper[$Newpaper]} --transition-type outer --transition-pos center
 
 # while true; do
 #     Newpaper=$(($RANDOM % $count))
