@@ -24,7 +24,9 @@
 		"custom/r_end",
 		"custom/l_end",
 		"wlr/taskbar",
-		"custom/spotify",
+		"custom/r_end",
+		"custom/l_end",
+		"hyprland/workspaces",
 		"custom/r_end",
 		"",
 		"custom/padd"
@@ -56,8 +58,8 @@
 	// sourced from modules based on config.ctl //
 
 	"custom/power": {
-		"format": "󰣇 {}",
-		// "exec": "echo ; echo  logout",
+		"format": "󰣇 ",
+		"exec": "echo ; echo 󰣇  Arch Linux",
 		// "on-click": "~/.config/hypr/scripts/logoutlaunch.sh 2",
 		// "interval": 86400, // once every day
 		"tooltip": true
@@ -93,14 +95,31 @@
 	// 	"tooltip": true
 	// },
 
+	"hyprland/workspaces": {
+		"active-only": false,
+		"all-outputs": true,
+		"disable-scroll": false,
+		"sort-by-name": true,
+		"on-scroll-up": "hyprctl dispatch workspace -1",
+		"on-scroll-down": "hyprctl dispatch workspace +1",
+		"format": "{icon}",
+		"on-click": "activate",
+		"format-icons": {
+			"urgent": "",
+			"active": "",
+			"default": "󰧞",
+			"sort-by-number": true
+		}
+	},
+
 	"custom/wallchange": {
-		"format": "󰆊 {}",
+		"format": "󰆊 ",
 		"exec": "echo ; echo 󰆊 switch wallpaper",
 		"on-click": "~/.config/.scripts/switchWallPaper.sh",
 		// "on-click": "~/.config/hypr/scripts/swwwallpaper.sh -n",
 		// "on-click-right": "~/.config/hypr/scripts/swwwallpaper.sh -p",
 		// "on-click-middle": "sleep 0.1 && ~/.config/hypr/scripts/swwwallselect.sh",
-		"interval": 86400, // once every day
+		// "interval": 86400, // once every day
 		"tooltip": true
 	},
 
@@ -112,6 +131,8 @@
 		"tooltip-format": "{title}",
 		"on-click": "activate",
 		"on-click-middle": "close",
+		// "on-scroll-up": "hyprctl dispatch workspace -1",
+		// "on-scroll-down": "hyprctl dispatch workspace +1",
 		// "ignore-list": ["Alacritty"],
 		"app_ids-mapping": {
 			"firefoxdeveloperedition": "firefox-developer-edition"
@@ -211,14 +232,18 @@
 	},
 
 	"pulseaudio": {
-		"format": "{icon} {volume}",
+		"format": "{icon}",
+		// "format": "{icon} {volume}",
 		"format-muted": " ",
-		"on-click": "pavucontrol -t 3",
-		"on-click-middle": "~/.config/hypr/scripts/volumecontrol.sh -o m",
-		"on-scroll-up": "~/.config/hypr/scripts/volumecontrol.sh -o i",
-		"on-scroll-down": "~/.config/hypr/scripts/volumecontrol.sh -o d",
+		// "on-click": "pavucontrol -t 3",
+		"on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
+		// "on-click-middle": "~/.config/hypr/scripts/volumecontrol.sh -o m",
+		// "on-scroll-up": "~/.config/hypr/scripts/volumecontrol.sh -o i",
+		// "on-scroll-down": "~/.config/hypr/scripts/volumecontrol.sh -o d",
+		// "on-scroll-up": "/bin/bash ~/.scripts/volume up",
+		// "on-scroll-down": "/bin/bash ~/.scripts/volume down",
 		"tooltip-format": "{icon} {desc} // {volume}%",
-		"scroll-step": 5,
+		// "scroll-step": 5,
 		"format-icons": {
 			"headphone": "",
 			"hands-free": "",
@@ -230,17 +255,17 @@
 		}
 	},
 
-	"pulseaudio#microphone": {
-		"format": "{format_source}",
-		"format-source": "",
-		"format-source-muted": "",
-		"on-click": "pavucontrol -t 4",
-		"on-click-middle": "~/.config/hypr/scripts/volumecontrol.sh -i m",
-		"on-scroll-up": "~/.config/hypr/scripts/volumecontrol.sh -i i",
-		"on-scroll-down": "~/.config/hypr/scripts/volumecontrol.sh -i d",
-		"tooltip-format": "{format_source} {source_desc} // {source_volume}%",
-		"scroll-step": 5
-	},
+	// "pulseaudio#microphone": {
+	// 	"format": "{format_source}",
+	// 	"format-source": "",
+	// 	"format-source-muted": "",
+	// 	"on-click": "pavucontrol -t 4",
+	// 	"on-click-middle": "~/.config/hypr/scripts/volumecontrol.sh -i m",
+	// 	"on-scroll-up": "~/.config/hypr/scripts/volumecontrol.sh -i i",
+	// 	"on-scroll-down": "~/.config/hypr/scripts/volumecontrol.sh -i d",
+	// 	"tooltip-format": "{format_source} {source_desc} // {source_volume}%",
+	// 	"scroll-step": 5
+	// },
 
 	// modules for padding //
 

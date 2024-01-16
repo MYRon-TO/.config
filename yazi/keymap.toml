@@ -108,20 +108,20 @@ keymap = [
 	{ on = [ "w" ], exec = "tasks_show", desc = "Show the tasks manager" },
 
 	# Goto
-	{ on = [ "g", "h" ],       exec = "cd ~",                              desc = "Go to the home directory" },
-	{ on = [ "g", "r" ],       exec = "cd /",                              desc = "Go to the root" },
-	{ on = [ "g", "c" ],       exec = "cd ~/.config",                      desc = "Go to the config directory" },
-	# { on = [ "g", "C" ],       exec = "cd ~/Code",                         desc = "Go to the Code directory" },
-	{ on = [ "g", "G" ],       exec = "cd ~/Git",                         desc = "Go to the Git directory" },
-	{ on = [ "g", "v" ],       exec = "cd ~/Documents/Obsidian_Vault",     desc = "Go to the Obsidian_Vault" },
-	{ on = [ "g", "d" ],       exec = "cd ~/Downloads",                    desc = "Go to the downloads directory" },
-	{ on = [ "g", "t" ],       exec = "cd /tmp",                           desc = "Go to the temporary directory" },
-	{ on = [ "g", "<Space>" ], exec = "cd --interactive",                  desc = "Go to a directory interactively" },
+	{ on = [ "g", "h" ],       exec = "cd ~",                                                       desc = "Go to the home directory" },
+	{ on = [ "g", "r" ],       exec = "cd /",                                                       desc = "Go to the root" },
+	{ on = [ "g", "c" ],       exec = "cd ~/.config",                                               desc = "Go to the config directory" },
+	{ on = [ "g", "G" ],       exec = "cd ~/Git",                                                   desc = "Go to the Git directory" },
+	{ on = [ "g", "v" ],       exec = "cd ~/Documents/Obsidian_Vault",                              desc = "Go to the Obsidian_Vault" },
+	{ on = [ "g", "f" ],       exec = "cd ~/Documents/Obsidian_Vault/Knowledge_Lake/Fragments",     desc = "Go to the Obsidian Knowledge_Lake Fragments" },
+	{ on = [ "g", "d" ],       exec = "cd ~/Downloads",                                             desc = "Go to the downloads directory" },
+	{ on = [ "g", "t" ],       exec = "cd /tmp",                                                    desc = "Go to the temporary directory" },
+	{ on = [ "g", "<Space>" ], exec = "cd --interactive",                                           desc = "Go to a directory interactively" },
+	# { on = [ "g", "C" ],       exec = "cd ~/Code",                                                desc = "Go to the Code directory" },
 
 	# Help
 	{ on = [ "~" ], exec = "help", desc = "Open help" },
 	{ on = [ "?" ], exec = "help", desc = "Open help" },
-
 	{ on = [ "c", "g" ],         exec = "shell --block lazygit",          desc = "lazygit" },
 ]
 

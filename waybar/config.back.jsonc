@@ -1,0 +1,167 @@
+{
+    "layer": "top",
+    "position": "left",
+    "height": 1000,
+    "margin-left": 0,
+    "modules-center": [
+        "hyprland/workspaces",
+        "tray",
+        "custom/spotify",
+        "network",
+        "custom/randwall",
+        "pulseaudio",
+        "pulseaudio#percentage",
+        "battery",
+        "battery#percentage",
+        "custom/time-icon",
+        // "clock#time",
+        // "custom/calendar-icon",
+        "clock"
+        // "clock#date"
+    ],
+    // Modules configuration
+    "hyprland/workspaces": {
+        "active-only": false,
+        "all-outputs": true,
+        "disable-scroll": false,
+        "sort-by-name": true,
+        "on-scroll-up": "hyprctl dispatch workspace -1",
+        "on-scroll-down": "hyprctl dispatch workspace +1",
+        "format": "{icon}",
+        "on-click": "activate",
+        "format-icons": {
+            //            "1": "一",
+            //            "2": "二",
+            //            "3": "三",
+            //            "4": "四",
+            //            "5": "五",
+            "urgent": "",
+            "active": "",
+            "default": "󰧞",
+            "sort-by-number": true
+        }
+    },
+    "custom/spotify": {
+        "format": "",
+        "interval": 1,
+        "exec-if": "pgrep spotify",
+        "return-type": "json",
+        "on-click": "playerctl -p spotify play-pause",
+        "on-scroll-up": "playerctl -p spotify previous",
+        "on-scroll-down": "playerctl -p spotify next",
+        "tooltip": true,
+        "escape": true,
+        "exec": "/home/loki/bin/spotify.sh"
+    },
+    "network": {
+        "format-wifi": "󰤨",
+        "format-ethernet": "",
+        "format-linked": "󱦂",
+        "format-disconnected": "󰤭",
+        "tooltip-format-wifi": "{essid}",
+        "tooltip-format-disconnected": "Disconnected"
+    },
+    // "custom/vpn": {
+    //   "format": "{}",
+    //   "interval": 1,
+    //   "tooltip": false,
+    //   "exec": "/home/loki/bin/waybar-vpn.sh"
+    // },
+    "pulseaudio": {
+        "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
+        "format": "{icon}",
+        "format-muted": "󰝟",
+        "format-icons": {
+            // "headphone": "",
+            // "hands-free": "",
+            // "headset": "",
+            // "phone": "",
+            // "portable": "",
+            // "car": "",
+            // "default": ["", ""]
+            "default": [
+                "󰕿",
+                "󰖀",
+                "󰕾"
+            ]
+        }
+    },
+    "pulseaudio#percentage": {
+        "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
+        "format": "{volume}"
+    },
+    "battery": {
+        "states": {
+            "warning": 30,
+            "critical": 15
+        },
+        "format": "{icon}",
+        "format-warning": "<span foreground='#98bb6c'>{icon}</span>",
+        "format-critical": "<span foreground='#e46876'>{icon}</span>",
+        "format-charging": "<span foreground='#98bb6c'></span>",
+        "format-plugged": "<span foreground='#98bb6c'>󱐥</span>",
+        "format-full": "<span foreground='#98bb6c'></span>",
+        "format-icons": [
+            " ",
+            " ",
+            " ",
+            " ",
+            " "
+        ]
+    },
+    "battery#percentage": {
+        "format": "{capacity}",
+        "tooltip-format": "{time}"
+    },
+    // "custom/calendar-icon": {
+    //     "format": "",
+    //     "tooltip": false
+    // },
+    // "clock#date": {
+    //     "format": "{:%d}",
+    //     "tooltip": "true",
+    //     "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
+    // },
+    "custom/time-icon": {
+        "format": "",
+        "tooltip": false
+    },
+    // "clock#time": {
+    //     "format": "{:%H\n%M}"
+    // },
+    "clock": {
+        "format": "{:%H\n%M}",
+        "format-alt": "{:%b\n%d}",
+        "tooltip-format": "\n{calendar}",
+        "calendar": {
+            "mode": "year",
+            "mode-mon-col": 3,
+            "weeks-pos": "right",
+            "on-scroll": 1,
+            "on-click-right": "mode",
+            "format": {
+                "months": "<span color='#ffead3'><b>{}</b></span>",
+                "days": "<span color='#ecc6d9'><b>{}</b></span>",
+                "weeks": "<span color='#99ffdd'><b>W{}</b></span>",
+                "weekdays": "<span color='#ffcc66'><b>{}</b></span>",
+                "today": "<span color='#ff6699'><b><u>{}</u></b></span>"
+            }
+        },
+        "actions": {
+            "on-click-right": "mode",
+            "on-click-forward": "tz_up",
+            "on-click-backward": "tz_down",
+            "on-scroll-up": "shift_up",
+            "on-scroll-down": "shift_down"
+        }
+    },
+    "tray": {
+        "icon-size": 16,
+        "spacing": 5
+    },
+    "custom/randwall": {
+        "format": "󰏘",
+        "on-click": "bash /home/Myron/.scripts/switchWallPaper.sh",
+        "tooltip-format": "Random Wallpaper"
+    }
+}
