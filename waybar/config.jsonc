@@ -60,6 +60,7 @@
 	"custom/power": {
 		"format": "󰣇 ",
 		"exec": "echo ; echo 󰣇  Arch Linux",
+		"on-click": "~/.config/scripts/LINUX_YES.sh",
 		// "on-click": "~/.config/hypr/scripts/logoutlaunch.sh 2",
 		// "interval": 86400, // once every day
 		"tooltip": true
@@ -115,7 +116,7 @@
 	"custom/wallchange": {
 		"format": "󰆊 ",
 		"exec": "echo ; echo 󰆊 switch wallpaper",
-		"on-click": "~/.config/.scripts/switchWallPaper.sh",
+		"on-click": "~/.config/scripts/switchWallPaper.sh",
 		// "on-click": "~/.config/hypr/scripts/swwwallpaper.sh -n",
 		// "on-click-right": "~/.config/hypr/scripts/swwwallpaper.sh -p",
 		// "on-click-middle": "sleep 0.1 && ~/.config/hypr/scripts/swwwallselect.sh",
