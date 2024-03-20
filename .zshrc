@@ -127,6 +127,7 @@ alias q="exit"
 alias s="neofetch"
 alias lg="lazygit"
 alias earphone="bluetoothctl connect 88:C9:E8:BA:C1:8C"
+alias keyboard="bluetoothctl connect F1:EF:01:DE:A7:D6"
 
 function ya() {
 	tmp="$(mktemp -t "yazi-cwd.XXXXX")"
@@ -145,3 +146,7 @@ compinit
 
 go env -w GO111MODULE=on
 go env -w GOPROXY=https://mirrors.aliyun.com/goproxy/,direct
+
+# waydroid
+alias waydroid-shell="sudo lxc-attach -P /var/lib/waydroid/lxc/ -n waydroid --clear-env"
+alias waydroid-ui="waydroid show-full-ui"
