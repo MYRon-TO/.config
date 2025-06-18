@@ -1,0 +1,146 @@
+* {
+  rosewater: #f5e0dc;
+  flamingo: #f2cdcd;
+  pink: #f5c2e7;
+  mauve: #cba6f7;
+  red: #f38ba8;
+  maroon: #eba0ac;
+  peach: #fab387;
+  yellow: #f9e2af;
+  green: #a6e3a1;
+  teal: #94e2d5;
+  sky: #89dceb;
+  sapphire: #74c7ec;
+  blue: #89b4fa;
+  lavender: #b4befe;
+  text: #cdd6f4;
+  subtext1: #bac2de;
+  subtext0: #a6adc8;
+  overlay2: #9399b2;
+  overlay1: #7f849c;
+  overlay0: #6c7086;
+  surface2: #585b70;
+  surface1: #45475a;
+  surface0: #313244;
+  base: #1e1e2e;
+  mantle: #181825;
+  crust: #11111b;
+
+  // border-color: black;
+  // border: 1px;
+
+  // font: "JetBrainsMono Nerd Font 16";
+  font: "FantasqueSansM Nerd Font 16";
+}
+
+element-text, element-icon , mode-switcher {
+    background-color: inherit;
+    text-color:       inherit;
+}
+
+window {
+  location: west;
+  anchor: west;
+
+  height: 100%;
+  width: 25%;
+
+  border-radius: 15px;
+  margin: 10px;
+  padding: 10px;
+
+  background-color: @base;
+
+  border-color: @lavender;
+  border: 3px;
+}
+
+mainbox {
+  children: [
+    inputbar,
+    message,
+    listview
+  ];
+
+  background-color: @base;
+
+  spacing: 5px;
+}
+
+inputbar {
+  border-radius: 5px;
+
+  margin: 5px 0 0 0;
+  padding: 2px;
+
+  background-color: @base;
+  children: [prompt, entry];
+}
+
+prompt {
+  background-color: @lavender;
+  text-color: @base;
+
+  // margin: 0px 5px 0px 5px;
+  border-radius: 10px;
+  padding: 5px 2px 5px 2px;
+}
+
+entry {
+  background-color: inherit;
+  margin: 0px 0px 0px 10px;
+  padding: 5px 2px 5px 2px;
+  text-color: @text;
+}
+
+
+listview {
+  background-color: @base;
+  margin: 10px 5px 0px 5px;
+
+  expand: true;
+}
+
+element {
+  padding: 5px;
+  background-color: inherit;
+  text-color: @text;
+}
+
+element-icon {
+  size: 20px;
+}
+
+element selected {
+
+  border-radius: 10px;
+
+  background-color:  @overlay0;
+  text-color: @text;
+}
+
+message {
+  border-radius: 10px;
+  padding: 2px;
+
+  background-color: @base;
+  text-color: @text;
+}
+
+textbox {
+  border-radius: 10px;
+
+  padding: 2px 10px 2px 10px;
+
+  background-color: @sky;
+  text-color: @surface0;
+}
+
+error-message {
+  border-radius: 5px;
+
+  padding: 2px 10px 2px 10px;
+
+  background-color: @red;
+  text-color: @surface0;
+}

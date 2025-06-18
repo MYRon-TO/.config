@@ -1,0 +1,14 @@
+#+TITLE: My Emacs Config
+
+* Basics
+
+  #+BEGIN_SRC emacs-lisp
+  (org-babel-load-file (expand-file-name "basics/basics.org" user-emacs-directory))
+  #+END_SRC
+
+* Plugins
+
+  #+BEGIN_SRC emacs-lisp
+  (setq package-enable-at-startup nil)
+  (org-babel-load-file (expand-file-name "plugins/plugins.org" user-emacs-directory))
+  #+END_SRC

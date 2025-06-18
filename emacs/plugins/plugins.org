@@ -1,0 +1,32 @@
+#+title: Plugin Config
+
+This is the configuration for the plugin.
+
+* Straight.el
+  :PROPERTIES:
+  :CUSTOM_ID: straight.el
+  :END:
+
+  Here download the straight.el package manager.
+
+  #+BEGIN_SRC emacs-lisp
+  (defvar bootstrap-version)
+  (let ((bootstrap-file
+         (expand-file-name
+          "straight/repos/straight.el/bootstrap.el"
+          (or (bound-and-true-p straight-base-dir)
+              user-emacs-directory)))
+        (bootstrap-version 7))
+    (unless (file-exists-p bootstrap-file)
+      (with-current-buffer
+          (url-retrieve-synchronously
+           "https://raw.githubusercontent.com/radian-software/straight.el/develop/install.el"
+           'silent 'inhibit-cookies)
+        (goto-char (point-max))
+        (eval-print-last-sexp)))
+    (load bootstrap-file nil 'nomessage))
+
+  ;; Use straight.el to install use-package
+  (straight-use-package 'use-package)
+  (setq straight-use-package-by-default t)
+  #+END_SRC

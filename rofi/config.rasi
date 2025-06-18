@@ -1,0 +1,24 @@
+configuration{
+  modi: "run,drun,window,keys,emoji:rofimoji,calc";
+
+  disable-history: false;
+  hide-scrollbar: true;
+
+  terminal: "kitty";
+
+  display-drun: "   Apps ";
+  display-run: "   Run ";
+  display-window: "   Win ";
+  display-keys: " 󰤨  Keys ";
+  display-calc: "  Calc ";
+
+  drun-display-format: "{icon} {name}";
+
+  sidebar-mode: true;
+  icon-theme: "Oranchelo";
+  show-icons: true;
+  location: 0;
+}
+
+@import "keymap"
+@theme "catppuccin-mocha"

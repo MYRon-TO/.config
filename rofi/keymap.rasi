@@ -1,0 +1,17 @@
+configuration{
+    // key mapping
+    kb-accept-entry: "Return";
+    kb-remove-char-back: "BackSpace";
+    kb-remove-to-eol: "";
+    kb-mode-complete: "";
+    kb-element-next: "";
+    kb-element-prev: "";
+
+    kb-mode-next: "Tab";
+    kb-mode-previous: "ISO_Left_Tab"; // ISO_Left_Tab = Shift+Tab
+
+    kb-row-down: "Control+j";
+    kb-row-up: "Control+k";
+    kb-row-left: "Control+h";
+    kb-row-right: "Control+l";
+}
