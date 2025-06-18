@@ -1,0 +1,226 @@
+-- for rime_ls
+vim.opt.iskeyword = "_,49-57,A-Z,a-z"
+
+local blink = {
+  'saghen/blink.cmp',
+  lazy = true,
+  event = {"InsertEnter", "CmdlineEnter"},
+  -- optional: provides snippets for the snippet source
+  dependencies = {
+    'rafamadriz/friendly-snippets',
+    "kdheepak/cmp-latex-symbols",
+    'Kaiser-Yang/blink-cmp-avante',
+    {
+      'nvim-tree/nvim-web-devicons',
+      opts = {
+        variant = "dark",
+      }
+    },
+    -- 'onsails/lspkind.nvim',
+    {
+      "giuxtaposition/blink-cmp-copilot",
+      dependencies = {
+        "zbirenbaum/copilot.lua",
+      },
+    },
+  },
+  -- use a release tag to download pre-built binaries
+  version = '*',
+
+  ---@module 'blink.cmp'
+  ---@type blink.cmp.Config
+  opts = {
+    -- See the full "keymap" documentation for information on defining your own keymap.
+    keymap = {
+      ---@alias preset "defualt" | "super-tab"| "enter"
+      preset = "enter",
+
+      ['<C-h>'] = { 'show', 'show_documentation', 'hide_documentation' },
+      ['<C-e>'] = { 'hide' },
+      ['<C-j>'] = { 'select_next', 'fallback' },
+      ['<C-k>'] = { 'select_prev', 'fallback' },
+      ['<C-p>'] = { 'fallback' },
+      ['<C-n>'] = { 'fallback' },
+      ['<C-space>'] = { 'fallback' },
+    },
+
+    cmdline = {
+      completion = {
+        menu = { auto_show = true },
+        ghost_text = { enabled = false },
+      },
+      keymap = {
+        preset = 'none',
+        ['<C-j>'] = {
+          'show_and_insert',
+          'select_next',
+        },
+        ['<C-k>'] = { 'show_and_insert', 'select_prev' },
+
+        ['<Tab>'] = { 'accept' },
+        ['<CR>'] = { 'fallback' },
+        ['<C-e>'] = { 'cancel' },
+      },
+      -- keymap = {
+      --   ['<C-h>'] = { 'show', 'show_documentation', 'hide_documentation' },
+      --   ['<C-j>'] = { 'select_next', 'fallback' },
+      --   ['<C-k>'] = { 'select_prev', 'fallback' },
+      --   ['<C-p>'] = { 'fallback' },
+      --   ['<C-n>'] = { 'fallback' },
+      --   ['<C-y>'] = { 'fallback' },
+      --   ['<C-space>'] = { 'fallback' },
+      -- },
+    },
+
+    appearance = {
+      -- Sets the fallback highlight groups to nvim-cmp's highlight groups
+      -- Useful for when your theme doesn't support blink.cmp
+      -- Will be removed in a future release
+      use_nvim_cmp_as_default = true,
+      -- Set to 'mono' for 'Nerd Font Mono' or 'normal' for 'Nerd Font'
+      -- Adjusts spacing to ensure icons are aligned
+      nerd_font_variant = 'mono',
+    },
+    completion = {
+      documentation = { window = { border = 'rounded' } },
+      menu = {
+        border = 'rounded',
+        draw = {
+          -- columns = { { "kind_icon", "label", gap = 2 }, { "label_description", "kind", gap = 1 } },
+          columns = { { "label", "label_description", gap = 1 }, { "kind_icon", "kind", gap = 1 } },
+        --   components = {
+        --     kind_icon = {
+        --       text = function(ctx)
+        --         local lspkind = require("lspkind")
+        --         local icon = ctx.kind_icon
+        --         if vim.tbl_contains({ "Path" }, ctx.source_name) then
+        --           local dev_icon, _ = require("nvim-web-devicons").get_icon(ctx.label)
+        --           if dev_icon then
+        --             icon = dev_icon
+        --           end
+        --         else
+        --           icon = lspkind.symbolic(ctx.kind, {
+        --             mode = "symbol",
+        --           })
+        --         end
+
+        --         return icon .. ctx.icon_gap
+        --       end,
+
+        --       highlight = function(ctx)
+        --         local hl = ctx.kind_hl
+        --         if vim.tbl_contains({ "Path" }, ctx.source_name) then
+        --           local dev_icon, dev_hl = require("nvim-web-devicons").get_icon(ctx.label)
+        --           if dev_icon then
+        --             hl = dev_hl
+        --           end
+        --         end
+        --         return hl
+        --       end,
+        --     }
+        --   }
+        }
+      },
+      list = {
+        selection = {
+          preselect = false,
+          auto_insert = true
+        }
+      },
+    },
+
+    -- Default list of enabled providers defined so that you can extend it
+    -- elsewhere in your config, without redefining it, due to `opts_extend`
+    sources = {
+      default = {
+        "lazydev",
+        "lsp",
+        "path",
+        "snippets",
+        "buffer",
+        "latex_symbols",
+        "avante",
+        "copilot",
+      },
+      providers = {
+        lsp = {
+          score_offset = 101,
+          transform_items = function(_, items)
+            -- the default transformer will do this
+            for _, item in ipairs(items) do
+              if item.kind == require('blink.cmp.types').CompletionItemKind.Snippet then
+                item.score_offset = item.score_offset - 3
+              end
+            end
+            -- you can define your own filter for rime item
+            return items
+          end
+        },
+        avante = {
+          module = 'blink-cmp-avante',
+          name = 'Avante',
+          opts = {
+            -- options for blink-cmp-avante
+          }
+        },
+        lazydev = {
+          name = "LazyDev",
+          module = "lazydev.integrations.blink",
+          -- make lazydev completions top priority (see `:h blink.cmp`)
+          score_offset = 100,
+        },
+        latex_symbols = {
+          name = 'latex_symbols',
+          module = "blink.compat.source",
+          score_offset = 100,
+          opts = {
+          },
+        },
+        copilot = {
+          name = "copilot",
+          module = "blink-cmp-copilot",
+          score_offset = -100,
+          async = true,
+
+          transform_items = function(_, items)
+            for _, item in ipairs(items) do
+              item.kind_icon = ""
+              item.kind_name = "Copilot"
+            end
+            return items
+          end,
+
+        },
+      },
+    },
+  },
+  opts_extend = { "sources.default" }
+}
+
+local blink_compat = {
+  'saghen/blink.compat',
+  -- use the latest release, via version = '*', if you also use the latest release for blink.cmp
+  version = '*',
+  -- lazy.nvim will automatically load the plugin when it's required by blink.cmp
+  lazy = true,
+  -- make sure to set opts so that lazy.nvim calls blink.compat's setup
+  opts = {},
+}
+
+local lazydev = {
+  "folke/lazydev.nvim",
+  ft = "lua", -- only load on lua files
+  opts = {
+    library = {
+      -- See the configuration section for more details
+      -- Load luvit types when the `vim.uv` word is found
+      { path = "${3rd}/luv/library", words = { "vim%.uv" } },
+    },
+  },
+}
+
+return {
+  blink_compat,
+  blink,
+  lazydev
+}

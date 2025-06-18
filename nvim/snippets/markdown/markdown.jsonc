@@ -1,0 +1,40 @@
+{
+  "bold" : {
+    "prefix" : "**",
+    "body" : [
+      "**${1:bold}** ${2:}"
+    ],
+    "description": "bold the text"
+  },
+  "italic" : {
+    "prefix" : "*",
+    "body" : [
+      "*${1:italic}* ${2:}"
+    ],
+    "description": "italic the text"
+  },
+
+  "todo" : {
+    "prefix" : "todo",
+    "body" : [
+      "> [!todo] #todo: ${1:待办}"
+    ],
+    "description": "add todo item"
+  },
+  "callout" : {
+    "prefix" : "callout",
+    "body" : [
+      "> [!${1|note,abstract,info,todo,tip,success,question,warning,failure,danger,bug,example,quote|}] ${2:title}",
+      ">",
+      "> ${3:content}"
+    ],
+    "description": "add an callout block"
+  },
+  "inline callout" : {
+    "prefix" : "co",
+    "body" : [
+      "> [!${1|note,abstract,info,todo,tip,success,question,warning,failure,danger,bug,example,quote|}] ${2:title}"
+    ],
+    "description": "add an inline callout"
+  }
+}

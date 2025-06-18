@@ -1,0 +1,107 @@
+{
+  "no object verb": {
+    "prefix": "vi",
+    "body": [
+      "[#NO_OBJECT]"
+    ],
+    "description": "No Object Verb"
+  },
+  "with object verb": {
+    "prefix": "vt",
+    "body": [
+      "[#WITH_OBJECT]"
+    ],
+    "description": "With Object Verb"
+  },
+  "countable noun": {
+    "prefix": "cn",
+    "body": [
+      "[#COUNTABLE]"
+    ],
+    "description": "Countable Noun"
+  },
+  "plural noun": {
+    "prefix": "pl",
+    "body": [
+      "[#PLURAL]"
+    ],
+    "description": "Plural Noun"
+  },
+  "singular noun": {
+    "prefix": "si",
+    "body": [
+      "[#SINGULAR]"
+    ],
+    "description": "singular Noun"
+  },
+  "uncountable noun": {
+    "prefix": "un",
+    "body": [
+      "[#UNCOUNTABLE]"
+    ],
+    "description": "Uncountable Noun"
+  },
+  "formal": {
+    "prefix": "formal",
+    "body": [
+      "[#FORMAL]"
+    ],
+    "description": "Formal"
+  },
+  "informal": {
+    "prefix": "informal",
+    "body": [
+      "[#INFORMAL]"
+    ],
+    "description": "Informal"
+  },
+  "opposite": {
+    "prefix": "op",
+    "body": [
+      "[#OPPOSITE]"
+    ],
+    "description": "Opposite Word"
+  },
+  "define" : {
+    "prefix" : "define",
+    "body" : [
+      "#defination ${1:定义}"
+    ],
+    "description": "TAG: defination"
+  },
+  "theorem" : {
+    "prefix" : "theorem",
+    "body" : [
+      "#theorem ${1:定理}"
+    ],
+    "description": "TAG: theorem"
+  },
+  "nutdo" : {
+    "prefix" : "nutdo",
+    "body" : [
+      "> #nut_do  ",
+      "> ${1:do what}",
+      ">",
+      "> ---",
+      "> <span style=\"color:red\">𝞦 not do</span>  ",
+      "> ${2:not do}",
+      ">",
+      "> ---",
+      "> <span style=\"color:yellow\">? why</span>  ",
+      "> ${3:why}",
+      ">",
+      "> ---",
+      "> <span style=\"color:green\">✓ do</span>  ",
+      "> ${4:do}",
+      ">"
+    ],
+    "description": "TAG: only nut do"
+  },
+  "book_page":{
+    "prefix" : "book",
+    "body" : [
+      "#book ${1:book_name}P${2:page}"
+    ],
+    "description": "TAG: Read the book at this page"
+  }
+}

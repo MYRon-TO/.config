@@ -1,0 +1,11 @@
+{
+  "LTeX-ls_setting":{
+    "prefix": "ltex",
+    "body": [
+      "",
+      "<!-- LTeX: ${1|KEY=VALUE,language=en-US,language=en-GB,language=zh-CN,enable=false|} -->",
+      ""
+    ],
+    "description": "LTeX-ls setting for markdown"
+  }
+}
