@@ -23,7 +23,7 @@ return {
             TRACE = "✎",
             WARN = ""
           },
-          level = 2,
+          level = 5,
           minimum_width = 50,
           render = "default",
           stages = "slide",

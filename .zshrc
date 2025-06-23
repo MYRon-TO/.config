@@ -175,3 +175,5 @@ export FZF_DEFAULT_OPTS=$FZF_DEFAULT_OPTS'
   --border="rounded" --border-label="" --preview-window="border-rounded" --prompt="⪢ "
   --marker="> " --pointer="⪢ " --separator="-" --scrollbar="│"
   --info="right"'
+
+[ -f /opt/miniforge/etc/profile.d/conda.sh ] && source /opt/miniforge/etc/profile.d/conda.sh
