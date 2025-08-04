@@ -4,22 +4,22 @@ local rust = {
     lazy = true,
     ft = { 'rust' },
   },
-  {
-    'cordx56/rustowl',
-    version = '*', -- Latest stable version
-    build = 'cargo binstall rustowl',
-    lazy = true,  -- This plugin is already lazy
-    ft = { 'rust' },
-    opts = {
-      client = {
-        on_attach = function(_, buffer)
-          vim.keymap.set('n', '<leader>r', function()
-            require('rustowl').toggle(buffer)
-          end, { buffer = buffer, desc = 'Toggle RustOwl' })
-        end
-      },
-    },
-  }
+  -- {
+  --   'cordx56/rustowl',
+  --   version = '*', -- Latest stable version
+  --   build = 'cargo binstall rustowl',
+  --   lazy = true,   -- This plugin is already lazy
+  --   ft = { 'rust' },
+  --   opts = {
+  --     client = {
+  --       on_attach = function(_, buffer)
+  --         vim.keymap.set('n', '<leader>r', function()
+  --           require('rustowl').toggle(buffer)
+  --         end, { buffer = buffer, desc = 'Toggle RustOwl' })
+  --       end
+  --     },
+  --   },
+  -- }
 }
 
 local haskell = {

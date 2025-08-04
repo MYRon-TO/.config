@@ -4,7 +4,7 @@ vim.opt.iskeyword = "_,49-57,A-Z,a-z"
 local blink = {
   'saghen/blink.cmp',
   lazy = true,
-  event = {"InsertEnter", "CmdlineEnter"},
+  event = { "InsertEnter", "CmdlineEnter" },
   -- optional: provides snippets for the snippet source
   dependencies = {
     'rafamadriz/friendly-snippets',
@@ -88,37 +88,37 @@ local blink = {
         draw = {
           -- columns = { { "kind_icon", "label", gap = 2 }, { "label_description", "kind", gap = 1 } },
           columns = { { "label", "label_description", gap = 1 }, { "kind_icon", "kind", gap = 1 } },
-        --   components = {
-        --     kind_icon = {
-        --       text = function(ctx)
-        --         local lspkind = require("lspkind")
-        --         local icon = ctx.kind_icon
-        --         if vim.tbl_contains({ "Path" }, ctx.source_name) then
-        --           local dev_icon, _ = require("nvim-web-devicons").get_icon(ctx.label)
-        --           if dev_icon then
-        --             icon = dev_icon
-        --           end
-        --         else
-        --           icon = lspkind.symbolic(ctx.kind, {
-        --             mode = "symbol",
-        --           })
-        --         end
+          --   components = {
+          --     kind_icon = {
+          --       text = function(ctx)
+          --         local lspkind = require("lspkind")
+          --         local icon = ctx.kind_icon
+          --         if vim.tbl_contains({ "Path" }, ctx.source_name) then
+          --           local dev_icon, _ = require("nvim-web-devicons").get_icon(ctx.label)
+          --           if dev_icon then
+          --             icon = dev_icon
+          --           end
+          --         else
+          --           icon = lspkind.symbolic(ctx.kind, {
+          --             mode = "symbol",
+          --           })
+          --         end
 
-        --         return icon .. ctx.icon_gap
-        --       end,
+          --         return icon .. ctx.icon_gap
+          --       end,
 
-        --       highlight = function(ctx)
-        --         local hl = ctx.kind_hl
-        --         if vim.tbl_contains({ "Path" }, ctx.source_name) then
-        --           local dev_icon, dev_hl = require("nvim-web-devicons").get_icon(ctx.label)
-        --           if dev_icon then
-        --             hl = dev_hl
-        --           end
-        --         end
-        --         return hl
-        --       end,
-        --     }
-        --   }
+          --       highlight = function(ctx)
+          --         local hl = ctx.kind_hl
+          --         if vim.tbl_contains({ "Path" }, ctx.source_name) then
+          --           local dev_icon, dev_hl = require("nvim-web-devicons").get_icon(ctx.label)
+          --           if dev_icon then
+          --             hl = dev_hl
+          --           end
+          --         end
+          --         return hl
+          --       end,
+          --     }
+          --   }
         }
       },
       list = {
@@ -155,6 +155,25 @@ local blink = {
             -- you can define your own filter for rime item
             return items
           end
+        },
+        snippets = {
+          module = 'blink.cmp.sources.snippets',
+          score_offset = -1, -- receives a -3 from top level snippets.score_offset
+
+          -- preset = 'default',
+          -- For `snippets.preset == 'default'`
+          opts = {
+            friendly_snippets = true,
+            search_paths = { vim.fn.stdpath('config') .. '/snippets' },
+            global_snippets = { 'all' },
+            extended_filetypes = {},
+            ignored_filetypes = {},
+            get_filetype = function(context)
+              return vim.bo.filetype
+            end,
+            -- Set to '+' to use the system clipboard, or '"' to use the unnamed register
+            clipboard_register = nil,
+          }
         },
         avante = {
           module = 'blink-cmp-avante',

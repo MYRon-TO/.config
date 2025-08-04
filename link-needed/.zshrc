@@ -31,19 +31,22 @@ export XDG_SESSION_TYPE=wayland
 # * unity
 # export SDL_VIDRODRIVER=x11
 
-# for kitty
+# * kitty
 export GLFW_IM_MODULE=ibus
 export TERM=xterm-256color
 
-# TeX
+# * TeX
 export TEXMFHOME=$HOME/.local/share/texmf
 export MANPATH=$MANPATH:/usr/local/texlive/2024/texmf-dist/doc/man
 export INFOPATH=$INFOPATH:/usr/local/texlive/2024/texmf-dist/doc/info
 export PATH=/usr/local/texlive/2024/bin/x86_64-linux:$PATH
 
-# npm
+# * npm
 PATH="$HOME/.local/bin:$PATH"
 export npm_config_prefix="$HOME/.local"
+
+# * conda
+[ -f /opt/miniforge/etc/profile.d/conda.sh ] && source /opt/miniforge/etc/profile.d/conda.sh
 
 # * Alias
 alias q="exit"
@@ -56,6 +59,7 @@ alias keyboard="bluetoothctl connect F1:EF:01:DE:A7:D6"
 alias doom="~/.config/emacs/bin/doom"
 # alias webui="docker start open-webui"
 alias lzd="lazydocker"
+alias HP="Hyprland"
 # alias tlmgr='/usr/share/texmf-dist/scripts/texlive/tlmgr.pl --usermode'
 
 function y() {
@@ -78,6 +82,13 @@ case ":$PATH:" in
   *":$PNPM_HOME:"*) ;;
   *) export PATH="$PNPM_HOME:$PATH" ;;
 esac
+
+
+# ** rustup 
+export RUSTUP_UPDATE_ROOT=https://mirrors.tuna.tsinghua.edu.cn/rustup/rustup
+export RUSTUP_DIST_SERVER=https://mirrors.tuna.tsinghua.edu.cn/rustup
+
+export HF_ENDPOINT=https://hf-mirror.com
 
 ### Added by Zinit's installer
 if [[ ! -f $HOME/.local/share/zinit/zinit.git/zinit.zsh ]]; then
@@ -175,7 +186,3 @@ export FZF_DEFAULT_OPTS=$FZF_DEFAULT_OPTS'
   --border="rounded" --border-label="" --preview-window="border-rounded" --prompt="⪢ "
   --marker="> " --pointer="⪢ " --separator="-" --scrollbar="│"
   --info="right"'
-
-[ -f /opt/miniforge/etc/profile.d/conda.sh ] && source /opt/miniforge/etc/profile.d/conda.sh
-export RUSTUP_UPDATE_ROOT=https://mirrors.tuna.tsinghua.edu.cn/rustup/rustup
-export RUSTUP_DIST_SERVER=https://mirrors.tuna.tsinghua.edu.cn/rustup

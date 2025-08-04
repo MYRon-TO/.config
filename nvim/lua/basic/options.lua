@@ -1,16 +1,16 @@
-local opt        = vim.opt
+local opt          = vim.opt
 
-vim.o.autoread   = true
+vim.o.autoread     = true
 
-opt.backup       = false   -- no backup file
-opt.swapfile     = false   -- no swap file
-opt.undofile     = true    -- enable undo
+opt.backup         = false   -- no backup file
+opt.swapfile       = false   -- no swap file
+opt.undofile       = true    -- enable undo
 
-opt.conceallevel = 0       -- so that `` is visible in markdown files
+opt.conceallevel   = 0       -- so that `` is visible in markdown files
 
-opt.mouse        = "a"     -- enable mouse support
-opt.encoding = "utf-8" -- the encoding written to a file
-opt.fileencodings = { "utf-8", "gbk", "cp936" }
+opt.mouse          = "a"     -- enable mouse support
+opt.encoding       = "utf-8" -- the encoding written to a file
+opt.fileencodings  = { "utf-8", "gbk", "sjis", "cp936" }
 
 opt.clipboard      = "unnamedplus" -- use system clipboard
 opt.cursorline     = true
@@ -32,7 +32,7 @@ opt.hidden         = true -- enable background buffers
 
 opt.termguicolors  = true -- true color support
 
-opt.timeoutlen     = 500 -- time to wait for a mapped sequence to complete (in milliseconds)
+opt.timeoutlen     = 500  -- time to wait for a mapped sequence to complete (in milliseconds)
 opt.updatetime     = 300
 --opt.writebackup
 
@@ -77,4 +77,3 @@ opt.syntax = 'on'
 
 -- views can only be fully collapsed with the global statusline
 opt.laststatus = 3
-

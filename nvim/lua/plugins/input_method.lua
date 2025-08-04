@@ -45,8 +45,8 @@ local rime_ls = {
   "liubianshi/cmp-lsp-rimels",
   branch = "blink.cmp",
   lazy = true,
-  event = "InsertEnter",
-  -- ft = { "org", "markdown", "tex", "typst" },
+  -- event = "InsertEnter",
+  ft = { "org", "markdown", "tex", "typst" },
   config = function()
     require('rimels').setup(
       {

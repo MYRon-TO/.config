@@ -25,8 +25,8 @@ return {
     formatters_by_ft = {
 
       -- * config/data
-      json = { "dprint" },
-      toml = { "dprint" },
+      json = default_formatters,
+      toml = { "taplo" },
 
       -- * web
       -- ** xml
