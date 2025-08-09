@@ -17,12 +17,7 @@ local blink = {
       }
     },
     -- 'onsails/lspkind.nvim',
-    {
-      "giuxtaposition/blink-cmp-copilot",
-      dependencies = {
-        "zbirenbaum/copilot.lua",
-      },
-    },
+    "fang2hou/blink-copilot",
   },
   -- use a release tag to download pre-built binaries
   version = '*',
@@ -134,13 +129,13 @@ local blink = {
     sources = {
       default = {
         "lazydev",
+        "copilot",
         "lsp",
         "path",
         "snippets",
         "buffer",
         "latex_symbols",
         "avante",
-        "copilot",
       },
       providers = {
         lsp = {
@@ -197,18 +192,18 @@ local blink = {
         },
         copilot = {
           name = "copilot",
-          module = "blink-cmp-copilot",
-          score_offset = -100,
+          module = "blink-copilot",
+          score_offset = 100,
           async = true,
+          opts = {
+            -- Local options override global ones
+            max_completions = 3, -- Override global max_completions
 
-          transform_items = function(_, items)
-            for _, item in ipairs(items) do
-              item.kind_icon = ""
-              item.kind_name = "Copilot"
-            end
-            return items
-          end,
-
+            -- Final settings:
+            -- * max_completions = 3
+            -- * max_attempts = 2
+            -- * all other options are default
+          }
         },
       },
     },

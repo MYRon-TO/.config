@@ -1,5 +1,5 @@
 IS_LINUX = true;
-ENABLE_RIME_LS = false;
+ENABLE_RIME_LS = true;
 
 COLORSHAME = {
   require("colorscheme/catppuccin"),
