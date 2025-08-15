@@ -13,7 +13,7 @@ function nvim_lspconfig.config()
     "lua_ls",
     "clangd",
     "basedpyright",
-    "texlab",
+    -- "texlab",
     "tinymist",
   }
 

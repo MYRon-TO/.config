@@ -18,6 +18,14 @@ local rust = {
   --         end, { buffer = buffer, desc = 'Toggle RustOwl' })
   --       end
   --     },
+  --     colors = {
+  --       lifetime = '#50fa7b', -- Dracula green
+  --       imm_borrow = '#8be9fd', -- Dracula cyan
+  --       mut_borrow = '#ff79c6', -- Dracula pink
+  --       move = '#f1fa8c',     -- Dracula yellow
+  --       call = '#ffb86c',     -- Dracula orange
+  --       outlive = '#ff5555',  -- Dracula red
+  --     },
   --   },
   -- }
 }
