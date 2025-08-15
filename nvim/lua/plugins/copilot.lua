@@ -152,29 +152,111 @@ local avante = {
 }
 
 local mcp = {
-  "ravitemer/mcphub.nvim",
+  {
+    "ravitemer/mcphub.nvim",
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+    },
+    build = "bundled_build.lua", -- Bundles `mcp-hub` binary along with the neovim plugin
+    config = function()
+      require("mcphub").setup({
+        use_bundled_binary = true, -- Use local `mcp-hub` binary
+      })
+    end,
+  }
+}
+
+local companion = {
+  "olimorris/codecompanion.nvim",
   dependencies = {
-    "nvim-lua/plenary.nvim", -- Required for Job and HTTP requests
+    {
+      "HakonHarnes/img-clip.nvim",
+      opts = {
+        filetypes = {
+          codecompanion = {
+            prompt_for_file_name = false,
+            template = "[Image]($FILE_PATH)",
+            use_absolute_path = true,
+          },
+        },
+      },
+    },
+    {
+      "MeanderingProgrammer/render-markdown.nvim",
+      ft = { "markdown", "codecompanion" }
+    },
+    {
+      "echasnovski/mini.diff",
+      config = function()
+        local diff = require("mini.diff")
+        diff.setup({
+          -- Disabled by default
+          source = diff.gen_source.none(),
+        })
+      end,
+    },
+    "nvim-lua/plenary.nvim",
+    "nvim-treesitter/nvim-treesitter",
+    "ravitemer/mcphub.nvim"
   },
-  -- comment the following line to ensure hub will be ready at the earliest
-  cmd = "MCPHub", -- lazy load by default
-  -- build = "npm install -g mcp-hub@latest",   -- Installs required mcp-hub npm module
-  -- uncomment this if you don't want mcp-hub to be available globally or can't use -g
-  build = "bundled_build.lua", -- Use this and set use_bundled_binary = true in opts  (see Advanced configuration)
-  config = function()
-    require("mcphub").setup({
-      use_bundled_binary = true,
-      extensions = {
-        avante = {
-          make_slash_commands = true, -- make /slash commands from MCP server prompts
+  keys = {
+    { "<leader>aa", "<cmd>CodeCompanion<cr>",            mode = { "n", "v" }, noremap = true, silent = true },
+    { "<leader>ad", "<cmd>CodeCompanionActions<cr>",     mode = { "n", "v" }, noremap = true, silent = true },
+    { "<leader>ac", "<cmd>CodeCompanionChat Toggle<cr>", mode = { "n", "v" }, noremap = true, silent = true },
+    -- ga in visual mode
+    { "ga",         "<cmd>CodeCompanionChat Add<cr>",    mode = "v",          noremap = true, silent = true },
+  },
+  opts = {
+    strategies = {
+      inline = {
+        keymaps = {
+          accept_change = {
+            modes = { n = "ga" },
+            description = "Accept the suggested change",
+          },
+          reject_change = {
+            modes = { n = "gr" },
+            opts = { nowait = true },
+            description = "Reject the suggested change",
+          },
+        },
+      },
+    },
+    display = {
+      chat = {
+        -- Options to customize the UI of the chat buffer
+        window = {
+          layout = "vertical", -- float|vertical|horizontal|buffer
+          width = 0.25,
+          border = "single",
+        },
+      },
+      action_palette = {
+        prompt = "Prompt ",                   -- Prompt used for interactive LLM calls
+        provider = "telescope",               -- Can be "default", "telescope", "fzf_lua", "mini_pick" or "snacks". If not specified, the plugin will autodetect installed providers.
+        opts = {
+          show_default_actions = true,        -- Show the default actions in the action palette?
+          show_default_prompt_library = true, -- Show the default prompt library in the action palette?
+          title = "CodeCompanion actions",    -- The title of the action palette
+        },
+      },
+    },
+    extensions = {
+      mcphub = {
+        callback = "mcphub.extensions.codecompanion",
+        opts = {
+          make_vars = true,
+          make_slash_commands = true,
+          show_result_in_chat = true
         }
       }
-    })
-  end,
+    }
+  },
 }
 
 return {
   copilot,
-  avante,
+  -- avante,
   mcp,
+  companion
 }

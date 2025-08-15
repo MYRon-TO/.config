@@ -1,5 +1,8 @@
 return {
   {
+    "nvim-lua/plenary.nvim", branch = "master"
+  },
+  {
     "willothy/flatten.nvim",
     -- A plugin that avoids nested opening of nvim
     -- config = true,

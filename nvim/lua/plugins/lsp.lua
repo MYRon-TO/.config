@@ -110,7 +110,7 @@ local action_preview = {
   "aznhe21/actions-preview.nvim",
   lazy = true,
   keys = {
-    "<leader>a",
+    "<leader>fa",
   },
   config = function()
     require("actions-preview").setup {

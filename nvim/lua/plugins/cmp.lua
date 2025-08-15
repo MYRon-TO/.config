@@ -135,7 +135,7 @@ local blink = {
         "snippets",
         "buffer",
         "latex_symbols",
-        "avante",
+        -- "avante",
       },
       providers = {
         lsp = {
@@ -170,13 +170,13 @@ local blink = {
             clipboard_register = nil,
           }
         },
-        avante = {
-          module = 'blink-cmp-avante',
-          name = 'Avante',
-          opts = {
-            -- options for blink-cmp-avante
-          }
-        },
+        -- avante = {
+        --   module = 'blink-cmp-avante',
+        --   name = 'Avante',
+        --   opts = {
+        --     -- options for blink-cmp-avante
+        --   }
+        -- },
         lazydev = {
           name = "LazyDev",
           module = "lazydev.integrations.blink",
