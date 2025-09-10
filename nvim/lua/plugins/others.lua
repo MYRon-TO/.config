@@ -32,7 +32,12 @@ return {
     "m4xshen/hardtime.nvim",
     lazy = false,
     dependencies = { "MunifTanjim/nui.nvim" },
-    opts = {},
+    opts = {
+      disabled_filetypes = {
+        ["mcphub"] = true,
+        ["Outline"] = true,
+      }
+    },
   },
   {
     "folke/which-key.nvim",

@@ -42,8 +42,8 @@ export INFOPATH=$INFOPATH:/usr/local/texlive/2024/texmf-dist/doc/info
 export PATH=/usr/local/texlive/2024/bin/x86_64-linux:$PATH
 
 # * npm
-PATH="$HOME/.local/bin:$PATH"
-export npm_config_prefix="$HOME/.local"
+# PATH="$HOME/.local/bin:$PATH"
+# export npm_config_prefix="$HOME/.local"
 
 # * conda
 [ -f /opt/miniforge/etc/profile.d/conda.sh ] && source /opt/miniforge/etc/profile.d/conda.sh

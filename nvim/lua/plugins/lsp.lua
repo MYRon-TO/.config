@@ -110,7 +110,12 @@ local action_preview = {
   "aznhe21/actions-preview.nvim",
   lazy = true,
   keys = {
-    "<leader>fa",
+    {
+      "<leader>fa",
+      function() require("actions-preview").code_actions() end,
+      mode = { "n", "v" },
+      desc = "Actions Preview",
+    },
   },
   config = function()
     require("actions-preview").setup {
@@ -133,8 +138,6 @@ local action_preview = {
         },
       },
     }
-
-    vim.keymap.set({ "v", "n" }, "<leader>a", require("actions-preview").code_actions)
   end,
 }
 

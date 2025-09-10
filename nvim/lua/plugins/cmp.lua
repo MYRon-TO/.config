@@ -1,15 +1,31 @@
 -- for rime_ls
 vim.opt.iskeyword = "_,49-57,A-Z,a-z"
 
+local luasnip = {
+  'L3MON4D3/LuaSnip',
+  -- version = "v2.*",
+  dependencies = { "rafamadriz/friendly-snippets" }, -- 可选
+  config = function()
+    local ls = require("luasnip")
+
+    -- 加载 vscode 风格的 snippets（如 friendly-snippets）
+    require("luasnip.loaders.from_vscode").lazy_load()
+
+    -- 加载你自己写的 snippets
+    require("luasnip.loaders.from_lua").load({ paths = "~/.config/nvim/snippets" })
+  end,
+}
+
 local blink = {
   'saghen/blink.cmp',
   lazy = true,
   event = { "InsertEnter", "CmdlineEnter" },
   -- optional: provides snippets for the snippet source
   dependencies = {
-    'rafamadriz/friendly-snippets',
+    -- 'rafamadriz/friendly-snippets',
     "kdheepak/cmp-latex-symbols",
-    'Kaiser-Yang/blink-cmp-avante',
+    -- 'Kaiser-Yang/blink-cmp-avante',
+    luasnip,
     {
       'nvim-tree/nvim-web-devicons',
       opts = {
@@ -25,6 +41,11 @@ local blink = {
   ---@module 'blink.cmp'
   ---@type blink.cmp.Config
   opts = {
+
+    snippets = {
+      preset = 'luasnip'
+    },
+
     -- See the full "keymap" documentation for information on defining your own keymap.
     keymap = {
       ---@alias preset "defualt" | "super-tab"| "enter"
@@ -56,15 +77,6 @@ local blink = {
         ['<CR>'] = { 'fallback' },
         ['<C-e>'] = { 'cancel' },
       },
-      -- keymap = {
-      --   ['<C-h>'] = { 'show', 'show_documentation', 'hide_documentation' },
-      --   ['<C-j>'] = { 'select_next', 'fallback' },
-      --   ['<C-k>'] = { 'select_prev', 'fallback' },
-      --   ['<C-p>'] = { 'fallback' },
-      --   ['<C-n>'] = { 'fallback' },
-      --   ['<C-y>'] = { 'fallback' },
-      --   ['<C-space>'] = { 'fallback' },
-      -- },
     },
 
     appearance = {
@@ -81,39 +93,7 @@ local blink = {
       menu = {
         border = 'rounded',
         draw = {
-          -- columns = { { "kind_icon", "label", gap = 2 }, { "label_description", "kind", gap = 1 } },
           columns = { { "label", "label_description", gap = 1 }, { "kind_icon", "kind", gap = 1 } },
-          --   components = {
-          --     kind_icon = {
-          --       text = function(ctx)
-          --         local lspkind = require("lspkind")
-          --         local icon = ctx.kind_icon
-          --         if vim.tbl_contains({ "Path" }, ctx.source_name) then
-          --           local dev_icon, _ = require("nvim-web-devicons").get_icon(ctx.label)
-          --           if dev_icon then
-          --             icon = dev_icon
-          --           end
-          --         else
-          --           icon = lspkind.symbolic(ctx.kind, {
-          --             mode = "symbol",
-          --           })
-          --         end
-
-          --         return icon .. ctx.icon_gap
-          --       end,
-
-          --       highlight = function(ctx)
-          --         local hl = ctx.kind_hl
-          --         if vim.tbl_contains({ "Path" }, ctx.source_name) then
-          --           local dev_icon, dev_hl = require("nvim-web-devicons").get_icon(ctx.label)
-          --           if dev_icon then
-          --             hl = dev_hl
-          --           end
-          --         end
-          --         return hl
-          --       end,
-          --     }
-          --   }
         }
       },
       list = {
@@ -135,11 +115,10 @@ local blink = {
         "snippets",
         "buffer",
         "latex_symbols",
-        -- "avante",
       },
       providers = {
         lsp = {
-          score_offset = 101,
+          score_offset = 0,
           transform_items = function(_, items)
             -- the default transformer will do this
             for _, item in ipairs(items) do
@@ -153,30 +132,29 @@ local blink = {
         },
         snippets = {
           module = 'blink.cmp.sources.snippets',
-          score_offset = -1, -- receives a -3 from top level snippets.score_offset
+          score_offset = -1,
+          -- score_offset = -1, -- receives a -3 from top level snippets.score_offset
 
-          -- preset = 'default',
-          -- For `snippets.preset == 'default'`
+          -- For `snippets.preset == 'luasnip'`
           opts = {
-            friendly_snippets = true,
-            search_paths = { vim.fn.stdpath('config') .. '/snippets' },
-            global_snippets = { 'all' },
-            extended_filetypes = {},
-            ignored_filetypes = {},
-            get_filetype = function(context)
-              return vim.bo.filetype
-            end,
-            -- Set to '+' to use the system clipboard, or '"' to use the unnamed register
-            clipboard_register = nil,
+            -- Whether to use show_condition for filtering snippets
+            use_show_condition = true,
+            -- Whether to show autosnippets in the completion list
+            show_autosnippets = true,
+            -- Whether to prefer docTrig placeholders over trig when expanding regTrig snippets
+            prefer_doc_trig = false,
           }
+
+          -- -- For `snippets.preset == 'default'`
+          -- opts = {
+          -- friendly_snippets = true,
+          -- search_paths = { vim.fn.stdpath('config') .. '/snippets' },
+          -- extended_filetypes = {},
+          -- ignored_filetypes = {},
+          -- -- Set to '+' to use the system clipboard, or '"' to use the unnamed register
+          -- clipboard_register = '+',
+          -- }
         },
-        -- avante = {
-        --   module = 'blink-cmp-avante',
-        --   name = 'Avante',
-        --   opts = {
-        --     -- options for blink-cmp-avante
-        --   }
-        -- },
         lazydev = {
           name = "LazyDev",
           module = "lazydev.integrations.blink",
@@ -193,7 +171,7 @@ local blink = {
         copilot = {
           name = "copilot",
           module = "blink-copilot",
-          score_offset = 100,
+          score_offset = -99,
           async = true,
           opts = {
             -- Local options override global ones
