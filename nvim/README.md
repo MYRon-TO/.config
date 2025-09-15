@@ -21,4 +21,3 @@ tree -L 3
 ```shell
 :%s/old\(.*\)/new\1/g
 ```
-
