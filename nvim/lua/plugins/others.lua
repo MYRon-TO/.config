@@ -1,5 +1,8 @@
 return {
   {
+    "nvim-lua/plenary.nvim", branch = "master"
+  },
+  {
     "willothy/flatten.nvim",
     -- A plugin that avoids nested opening of nvim
     -- config = true,
@@ -29,7 +32,12 @@ return {
     "m4xshen/hardtime.nvim",
     lazy = false,
     dependencies = { "MunifTanjim/nui.nvim" },
-    opts = {},
+    opts = {
+      disabled_filetypes = {
+        ["mcphub"] = true,
+        ["Outline"] = true,
+      }
+    },
   },
   {
     "folke/which-key.nvim",

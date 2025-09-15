@@ -1,4 +1,6 @@
--- vim.system({ 'rime_ls', '--listen', '127.0.0.1:9257' })
+if ENABLE_RIME_LS then
+  vim.system({ 'rime_ls', '--listen', '127.0.0.1:9257' })
+end
 
 local im_select = {
   "keaising/im-select.nvim",

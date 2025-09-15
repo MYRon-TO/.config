@@ -8,42 +8,51 @@ local telescope = {
   lazy = true,
   event = "VeryLazy",
   keys = {
-    { '<leader>fh',
-      require('telescope.builtin').help_tags
+    {
+      '<leader>fh',
+      require('telescope.builtin').help_tags,
+      desc = "Help (Telescope)"
     },
-    { '<leader>fb',
-      require('telescope.builtin').buffers
+    {
+      '<leader>fb',
+      require('telescope.builtin').buffers,
+      desc = "Buffers (Telescope)"
     },
     {
       '<leader>fg',
-      require('telescope.builtin').live_grep
+      require('telescope.builtin').live_grep,
+      desc = "Live Grep (Telescope)"
     },
     {
       "<leader>ff",
-      require('telescope.builtin').git_files
+      require('telescope.builtin').git_files,
+      desc = "Git Files (Telescope)",
     },
     {
       -- Warning: relative with plugin folke/todo-comments.nvim
       "<leader>ft",
       "<cmd>Telescope todo-comments todo<cr>",
-      desc = "Find TODO",
+      desc = "Todo Comments (Telescope)",
     },
+    { "<leader>fd", "<cmd>Telescope diagnostics<cr>", desc = "Diagnostics (Telescope)" }
   },
 
   config = function()
+    local trouble = require("trouble.sources.telescope")
+
     require('telescope').setup {
       defaults = {
         -- Default configuration for telescope goes here:
         -- config_key = value,
         mappings = {
           i = {
-            -- map actions.which_key to <C-h> (default: <C-/>)
-            -- actions.which_key shows the mappings for your picker,
-            -- e.g. git_{create, delete, ...}_branch for the git_branches picker
-            ["<c-j>"] = require('telescope.actions').move_selection_next,
-            ["<c-k>"] = require('telescope.actions').move_selection_previous,
-            ["<esc>"] = require('telescope.actions').close,
+            -- ["<c-j>"] = require('telescope.actions').move_selection_next,
+            -- ["<c-k>"] = require('telescope.actions').move_selection_previous,
+            -- ["<esc>"] = require('telescope.actions').close,
             ["<cr>"] = require('telescope.actions').select_default + require('telescope.actions').center,
+          },
+          n = {
+            ["<c-t>"] = trouble.open,
           }
         }
       },
@@ -76,6 +85,7 @@ local telescope = {
       },
     }
     require('telescope').load_extension('fzf')
+    require('telescope').load_extension('ht')
   end
 }
 
@@ -177,23 +187,6 @@ local trouble = {
     },
 
     config = function()
-      local actions = require("telescope.actions")
-      local open_with_trouble = require("trouble.sources.telescope").open
-
-      -- Use this to add more results without clearing the trouble list
-      -- local add_to_trouble = require("trouble.sources.telescope").add
-
-      local tel = require("telescope")
-
-      tel.setup({
-        defaults = {
-          mappings = {
-            i = { ["<c-t>"] = open_with_trouble },
-            n = { ["<c-t>"] = open_with_trouble },
-          },
-        },
-      })
-
       require("trouble").setup({
         signs = {
           -- icons / text used for a diagnostic
