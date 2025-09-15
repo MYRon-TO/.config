@@ -1,4 +1,4 @@
-vim.system({ 'rime_ls', '--listen', '127.0.0.1:9257' })
+-- vim.system({ 'rime_ls', '--listen', '127.0.0.1:9257' })
 
 local im_select = {
   "keaising/im-select.nvim",

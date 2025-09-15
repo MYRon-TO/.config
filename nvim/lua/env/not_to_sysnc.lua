@@ -1,4 +1,4 @@
-IS_LINUX = true;
+IS_LINUX = false;
 ENABLE_RIME_LS = false;
 
 COLORSHAME = {
