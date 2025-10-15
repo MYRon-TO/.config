@@ -1,6 +1,3 @@
--- patch
--- require("patchs/patchs")
-
 require("env")
 require("basic/options")
 require("basic/keymap")
@@ -19,3 +16,7 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 require("lazy").setup("plugins")
+
+-- patch
+require("patchs/patchs")
+

@@ -54,4 +54,6 @@ Additional context:
 The current date is ${date}.
 The user's Neovim version is ${version}.
 The user is working on a ${os} machine. Please respond with system specific commands if applicable.
+
+非代码部分请使用中文作答
 ]]
