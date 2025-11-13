@@ -15,6 +15,8 @@ keymap = [
 	# Hopping
 	{ on = "k", run = "arrow -1", desc = "Move cursor up" },
 	{ on = "j", run = "arrow 1",  desc = "Move cursor down" },
+	{ on = "<C-k>", run = "arrow -10", desc = "Move cursor up" },
+	{ on = "<C-j>", run = "arrow 10",  desc = "Move cursor down" },
 
 	{ on = "<Up>",    run = "arrow -1", desc = "Move cursor up" },
 	{ on = "<Down>",  run = "arrow 1",  desc = "Move cursor down" },

@@ -65,6 +65,26 @@ local companion = {
     { "ga",         "<cmd>CodeCompanionChat Add<cr>",    mode = "v",          noremap = true, silent = true },
   },
   opts = {
+    ---@type CodeCompanion.AdapterArgs
+    adapters = {
+      acp = {
+        gemini_cli = function()
+          return require("codecompanion.adapters").extend("gemini_cli", {
+            defaults = {
+              ---@type string
+              oauth_credentials_path = vim.fs.abspath("~/.gemini/oauth_creds.json"),
+            },
+            handlers = {
+              auth = function(self)
+                ---@type string|nil
+                local oauth_credentials_path = self.defaults.oauth_credentials_path
+                return (oauth_credentials_path and vim.fn.filereadable(oauth_credentials_path)) == 1
+              end,
+            },
+          })
+        end,
+      },
+    },
     language = "Simplified Chinese",
     send_code = true,
     prompt_library = {
@@ -128,9 +148,9 @@ local companion = {
       chat = {
         -- Options to customize the UI of the chat buffer
         window = {
-          -- layout = "vertical", -- float|vertical|horizontal|buffer
-          layout = "float", -- float|vertical|horizontal|buffer
-          -- width = 0.25,
+          layout = "vertical", -- float|vertical|horizontal|buffer
+          -- layout = "float", -- float|vertical|horizontal|buffer
+          width = 0.35,
           border = "single",
         },
       },
