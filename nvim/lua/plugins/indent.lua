@@ -1,7 +1,12 @@
 local Color = "#cba6f7"
 local ErrorColor = "#ff5555"
+
+-- local Color = "#806d9c"      -- 紫罗兰色
+-- local ErrorColor = "#c21f30" -- 枫叶红色
+
 -- local Color = "#8DD8CA"
 -- local ErrorColor = "#ff2222"
+
 return {
   {
     "shellRaining/hlchunk.nvim",
@@ -12,7 +17,7 @@ return {
           enable = true,
           use_treesitter = true,
           -- excluded_filetypes = {"*.dart"},
-          notify = true,           -- notify if some situation(like disable chunk mod double time)
+          notify = true, -- notify if some situation(like disable chunk mod double time)
           chars = {
             horizontal_line = "─",
             vertical_line = "│",

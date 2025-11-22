@@ -53,6 +53,7 @@ alias q="exit"
 alias s="neofetch"
 alias lg="lazygit"
 alias py="python3"
+alias ll="ls -al"
 alias split_wallpaper="python ~/.script/split_wallpaper.py"
 alias earphone="bluetoothctl connect 88:C9:E8:BA:C1:8C"
 alias keyboard="bluetoothctl connect F1:EF:01:DE:A7:D6"
@@ -85,11 +86,13 @@ esac
 
 
 # ** rustup 
-export RUSTUP_UPDATE_ROOT=https://mirrors.tuna.tsinghua.edu.cn/rustup/rustup
-export RUSTUP_DIST_SERVER=https://mirrors.tuna.tsinghua.edu.cn/rustup
-# export RUSTUP_DIST_SERVER= rustup
+# export RUSTUP_UPDATE_ROOT=https://mirrors.tuna.tsinghua.edu.cn/rustup/rustup
+# export RUSTUP_DIST_SERVER=https://mirrors.tuna.tsinghua.edu.cn/rustup
+export RUSTUP_DIST_SERVER=
+export RUSTUP_UPDATE_ROOT=
 
-export HF_ENDPOINT=https://hf-mirror.com
+# export HF_ENDPOINT=https://hf-mirror.com
+export HF_ENDPOINT=https://huggingface.co
 
 ### Added by Zinit's installer
 if [[ ! -f $HOME/.local/share/zinit/zinit.git/zinit.zsh ]]; then

@@ -1,1 +1,1 @@
-require("patchs/chinese_support/quickPoint")
+require("patchs/treesitter")

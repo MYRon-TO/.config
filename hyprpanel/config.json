@@ -42,5 +42,64 @@
   "bar.clock.showTime": true,
   "bar.clock.showIcon": true,
   "bar.clock.format": "%a %b %d | %H:%M",
-  "theme.font.weight": 900
+  "theme.font.weight": 900,
+  "bar.layouts": {
+    "0": {
+      "left": [
+        "dashboard",
+        "workspaces",
+        "windowtitle"
+      ],
+      "middle": [
+        "media"
+      ],
+      "right": [
+        "volume",
+        "network",
+        "bluetooth",
+        "systray",
+        "clock",
+        "notifications"
+      ]
+    },
+    "1": {
+      "left": [],
+      "middle": [
+        "clock"
+      ],
+      "right": []
+    },
+    "2": {
+      "left": [],
+      "middle": [],
+      "right": []
+    }
+  },
+  "menus.media.hideAuthor": false,
+  "menus.media.displayTime": false,
+  "theme.notification.border": "#313243",
+  "theme.bar.buttons.monochrome": false,
+  "theme.bar.buttons.dashboard.icon": "#eba0ac",
+  "theme.bar.buttons.dashboard.border": "#eba0ac",
+  "theme.bar.buttons.workspaces.border": "#f5c2e7",
+  "theme.bar.buttons.volume.border": "#b4befe",
+  "theme.bar.buttons.volume.text": "#b4befe",
+  "theme.bar.buttons.volume.icon": "#b4befe",
+  "theme.bar.buttons.network.text": "#89b4fa",
+  "theme.bar.buttons.network.icon": "#89b4fa",
+  "theme.bar.buttons.network.border": "#89b4fa",
+  "theme.bar.buttons.bluetooth.text": "#74c6ec",
+  "theme.bar.buttons.bluetooth.icon": "#74c6ec",
+  "theme.bar.buttons.bluetooth.border": "#94e2d5",
+  "theme.bar.buttons.systray.border": "#94e2d5",
+  "theme.bar.buttons.systray.customIcon": "#94e2d5",
+  "theme.bar.buttons.clock.text": "#a6e3a1",
+  "theme.bar.buttons.clock.icon": "#a6e3a1",
+  "theme.bar.buttons.clock.border": "#a6e3a1",
+  "theme.bar.buttons.notifications.total": "#b4befe",
+  "theme.bar.buttons.notifications.icon": "#b4befe",
+  "theme.bar.buttons.notifications.border": "#b4befe",
+  "theme.bar.buttons.media.text": "#caa6f7",
+  "theme.bar.buttons.media.icon": "#caa6f7",
+  "theme.bar.buttons.media.border": "#caa6f7"
 }

@@ -36,6 +36,7 @@ return {
       disabled_filetypes = {
         ["mcphub"] = true,
         ["Outline"] = true,
+        ["codecompanion"] = true,
       }
     },
   },

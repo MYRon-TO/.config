@@ -1,1 +1,0 @@
-CHROOT=$HOME/Git/chroot
