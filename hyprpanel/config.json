@@ -90,7 +90,7 @@
   "theme.bar.buttons.network.border": "#89b4fa",
   "theme.bar.buttons.bluetooth.text": "#74c6ec",
   "theme.bar.buttons.bluetooth.icon": "#74c6ec",
-  "theme.bar.buttons.bluetooth.border": "#94e2d5",
+  "theme.bar.buttons.bluetooth.border": "#89dceb",
   "theme.bar.buttons.systray.border": "#94e2d5",
   "theme.bar.buttons.systray.customIcon": "#94e2d5",
   "theme.bar.buttons.clock.text": "#a6e3a1",
@@ -239,7 +239,7 @@
   "theme.bar.menus.menu.bluetooth.text": "#cdd6f4",
   "theme.bar.menus.menu.bluetooth.label.color": "#89dceb",
   "theme.bar.menus.menu.bluetooth.scroller.color": "#89dceb",
-  "theme.bar.menus.menu.bluetooth.border.color": "#313244",
+  "theme.bar.menus.menu.bluetooth.border.color": "#cdd6f4",
   "theme.bar.menus.menu.bluetooth.background.color": "#11111b",
   "theme.bar.menus.menu.bluetooth.card.color": "#1e1e2e",
   "theme.bar.menus.menu.network.switch.puck": "#454759",
@@ -451,5 +451,6 @@
   "theme.bar.buttons.modules.microphone.text": "#a6e3a1",
   "theme.bar.buttons.modules.microphone.background": "#242438",
   "theme.bar.buttons.modules.microphone.icon": "#a6e3a1",
-  "theme.bar.buttons.modules.microphone.icon_background": "#242438"
+  "theme.bar.buttons.modules.microphone.icon_background": "#242438",
+  "theme.bar.menus.border.size": "0.1em"
 }
