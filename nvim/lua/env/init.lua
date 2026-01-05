@@ -4,6 +4,8 @@ ENV = {}
 
 vim.env.PATH = vim.fn.stdpath("data") .. "/mason/bin:" .. vim.env.PATH
 
+ENV.enable_kitty_smart_splits = ENABLE_KITTY_SPLIT
+
 if IS_LINUX then
   ENV.im_select = {
     default_im_select = "keyboard-us",

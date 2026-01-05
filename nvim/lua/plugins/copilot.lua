@@ -40,7 +40,14 @@ local companion = {
     },
     {
       "MeanderingProgrammer/render-markdown.nvim",
-      ft = { "markdown", "codecompanion" }
+      ft = { "markdown", "codecompanion" },
+      opts = {
+        html = {
+          comment = {
+            conceal = false
+          }
+        },
+      }
     },
     {
       "echasnovski/mini.diff",
@@ -54,7 +61,7 @@ local companion = {
     },
     "nvim-lua/plenary.nvim",
     "nvim-treesitter/nvim-treesitter",
-    "ravitemer/mcphub.nvim",
+    -- "ravitemer/mcphub.nvim",
     "ravitemer/codecompanion-history.nvim",
   },
   keys = {
@@ -165,14 +172,14 @@ local companion = {
       },
     },
     extensions = {
-      mcphub = {
-        callback = "mcphub.extensions.codecompanion",
-        opts = {
-          make_vars = true,
-          make_slash_commands = true,
-          show_result_in_chat = true
-        }
-      },
+      -- mcphub = {
+      --   callback = "mcphub.extensions.codecompanion",
+      --   opts = {
+      --     make_vars = true,
+      --     make_slash_commands = true,
+      --     show_result_in_chat = true
+      --   }
+      -- },
       history = {
         enabled = true,
         opts = {
@@ -258,6 +265,6 @@ local companion = {
 
 return {
   copilot,
-  mcp,
+  -- mcp,
   companion
 }
