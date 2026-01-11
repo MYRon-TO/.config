@@ -50,3 +50,8 @@ yazi/plugins/**
 
 !electron-flags.conf
 !qq-electron-flags.conf
+
+!noctalia
+!noctalia/**
+noctalia/plugins.json
+noctalia/plugins/**
