@@ -50,23 +50,23 @@ if ENV.enable_kitty_smart_splits then
 end
 
 return {
-  {
-    'akinsho/toggleterm.nvim',
-    version = "*",
-    lazy = true,
-    config = function()
-      require('toggleterm').setup {
-        winbar = { enabled = true, },
-        open_mapping = [[<c-t>]],
-      }
-      -- vim.cmd[[autocmd TermEnter term://*toggleterm#* tnoremap <silent><c-t> <Cmd>exe v:count1 . "ToggleTerm"<CR>]]
-    end,
-    keys = {
-      { '<c-t><c-t>', mode = { 't', 'n' }, "<cmd>ToggleTerm direction=float<CR>",      desc = "Toggle Termianal" },
-      { '<c-t>j',     mode = { 't', 'n' }, "<cmd>ToggleTerm direction=horizontal<CR>", desc = "Toggle Termianal" },
-      { '<c-Esc>',    mode = { 't' },      "<C-\\><C-n>",                              desc = "Normal mode in Termianal" },
-    },
-  },
+  -- {
+  --   'akinsho/toggleterm.nvim',
+  --   version = "*",
+  --   lazy = true,
+  --   config = function()
+  --     require('toggleterm').setup {
+  --       winbar = { enabled = true, },
+  --       open_mapping = [[<c-t>]],
+  --     }
+  --     -- vim.cmd[[autocmd TermEnter term://*toggleterm#* tnoremap <silent><c-t> <Cmd>exe v:count1 . "ToggleTerm"<CR>]]
+  --   end,
+  --   keys = {
+  --     { '<c-t><c-t>', mode = { 't', 'n' }, "<cmd>ToggleTerm direction=float<CR>",      desc = "Toggle Termianal" },
+  --     { '<c-t>j',     mode = { 't', 'n' }, "<cmd>ToggleTerm direction=horizontal<CR>", desc = "Toggle Termianal" },
+  --     { '<c-Esc>',    mode = { 't' },      "<C-\\><C-n>",                              desc = "Normal mode in Termianal" },
+  --   },
+  -- },
   kitty
 }
 

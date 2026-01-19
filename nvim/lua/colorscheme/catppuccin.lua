@@ -54,6 +54,13 @@ return {
           BlinkCmpMenuBorder    = { fg = colors.lavender, bg = colors.base },
           BlinkCmpMenuSelection = { fg = colors.text, bg = "#313244" },
           NoicePopupBorder      = { fg = colors.lavender },
+
+          SnacksIndentScope1 = { fg = colors.pink},
+          SnacksIndentScope2 = { fg = colors.peach},
+          SnacksIndentScope3 = { fg = colors.yellow},
+          SnacksIndentScope4 = { fg = colors.green},
+          SnacksIndentScope5 = { fg = colors.teal},
+          SnacksIndentChunk = { fg = colors.subtext1}
         }
       end,
       integrations = {

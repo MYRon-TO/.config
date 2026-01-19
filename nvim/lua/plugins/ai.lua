@@ -65,9 +65,9 @@ local companion = {
     "ravitemer/codecompanion-history.nvim",
   },
   keys = {
-    { "<leader>aa", "<cmd>CodeCompanion<cr>",            mode = { "n", "v" }, noremap = true, silent = true },
-    { "<leader>ad", "<cmd>CodeCompanionActions<cr>",     mode = { "n", "v" }, noremap = true, silent = true },
-    { "<leader>ac", "<cmd>CodeCompanionChat Toggle<cr>", mode = { "n", "v" }, noremap = true, silent = true },
+    -- { "<leader>aa", "<cmd>CodeCompanion<cr>",            mode = { "n", "v" }, noremap = true, silent = true },
+    { "<leader>aj", "<cmd>CodeCompanionActions<cr>",     mode = { "n", "v" }, noremap = true, silent = true },
+    { "<leader>ak", "<cmd>CodeCompanionChat Toggle<cr>", mode = { "n", "v" }, noremap = true, silent = true },
     -- ga in visual mode
     { "ga",         "<cmd>CodeCompanionChat Add<cr>",    mode = "v",          noremap = true, silent = true },
   },
@@ -263,8 +263,78 @@ local companion = {
   },
 }
 
+local sidekick = {
+  "folke/sidekick.nvim",
+  opts = {
+    -- add any options here
+    cli = {
+      mux = {
+        backend = "tmux",
+        enabled = true,
+      },
+    },
+  },
+  keys = {
+    {
+      "<c-t><c-t>",
+      function()
+        require("sidekick").nes_jump_or_apply()
+      end,
+      expr = true,
+      desc = "Goto/Apply Next Edit Suggestion",
+    },
+    {
+      "<c-t><c-a>",
+      function() require("sidekick.cli").toggle() end,
+      desc = "Sidekick Toggle",
+      mode = { "n", "t", "i", "x" },
+    },
+    {
+      "<leader>aa",
+      function() require("sidekick.cli").toggle() end,
+      desc = "Sidekick Toggle CLI",
+    },
+    {
+      "<leader>as",
+      function() require("sidekick.cli").select({ filter = { installed = true } }) end,
+      -- Or to select only installed tools:
+      -- require("sidekick.cli").select({ filter = { installed = true } })
+      desc = "Select CLI",
+    },
+    {
+      "<leader>ad",
+      function() require("sidekick.cli").close() end,
+      desc = "Detach a CLI Session",
+    },
+    {
+      "<leader>at",
+      function() require("sidekick.cli").send({ msg = "{this}" }) end,
+      mode = { "x", "n" },
+      desc = "Send This",
+    },
+    {
+      "<leader>af",
+      function() require("sidekick.cli").send({ msg = "{file}" }) end,
+      desc = "Send File",
+    },
+    {
+      "<leader>av",
+      function() require("sidekick.cli").send({ msg = "{selection}" }) end,
+      mode = { "x" },
+      desc = "Send Visual Selection",
+    },
+    {
+      "<leader>ap",
+      function() require("sidekick.cli").prompt() end,
+      mode = { "n", "x" },
+      desc = "Sidekick Select Prompt",
+    },
+  },
+}
+
 return {
   copilot,
   -- mcp,
-  companion
+  companion,
+  sidekick
 }

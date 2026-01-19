@@ -15,6 +15,7 @@ function nvim_lspconfig.config()
     "basedpyright",
     -- "texlab",
     "tinymist",
+    "copilot",
   }
 
   vim.lsp.enable(lsp)
@@ -74,6 +75,7 @@ local mason = {
         "basedpyright",
         "lua-language-server",
         "tinymist",
+        "copilot-language-server"
       }
       local function ensure_installed(packages)
         local registry = require("mason-registry")
