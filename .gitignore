@@ -3,8 +3,17 @@
 nvim/lazy-lock.json
 kitty/os.conf
 
+!link/
+!link/**
+
+link/home/.gemini/**
+!link/home/.gemini/settings.json
+
 !kitty
 !kitty/**
+
+!aerospace
+!aerospace/**
 
 !alacritty
 !alacritty/**
