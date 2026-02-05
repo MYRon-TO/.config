@@ -1,6 +1,7 @@
 {
   "general": {
-    "vimMode": true
+    "vimMode": true,
+    "previewFeatures": true
   },
   "security": {
     "auth": {
@@ -8,3 +9,4 @@
     }
   }
 }
+

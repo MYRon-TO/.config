@@ -1,7 +1,5 @@
 *
 
-nvim/lazy-lock.json
-kitty/os.conf
 
 !link/
 !link/**
@@ -11,6 +9,7 @@ link/home/.gemini/**
 
 !kitty
 !kitty/**
+kitty/os.conf
 
 !aerospace
 !aerospace/**
@@ -28,9 +27,6 @@ link/home/.gemini/**
 !hyprpanel
 !hyprpanel/**
 
-!kitty
-!kitty/**
-
 !lazygit
 !lazygit/**
 
@@ -45,6 +41,8 @@ link/home/.gemini/**
 
 !nvim
 !nvim/**
+nvim/lazy-lock.json
+nvim/lua/env/not_to_sysnc.lua
 
 !rofi
 !rofi/**
@@ -57,20 +55,9 @@ yazi/plugins/**
 !zed
 !zed/**
 
-!electron-flags.conf
-!qq-electron-flags.conf
-
 !noctalia
 !noctalia/**
 noctalia/plugins.json
 noctalia/plugins/**
-nvim/lazy-lock.json
 
-!nix
-!nix/**
-nix/nix.conf
-nix/macos-keychain.crt
-
-!nix-darwin
-!nix-darwin/**
-nvim/lua/env/not_to_sysnc.lua
+!makefile
