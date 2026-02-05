@@ -54,6 +54,9 @@ return {
       -- rust = { "dprint", "rustfmt", stop_after_first = true },
       rust = { "rustfmt", stop_after_first = true },
 
+      -- nix
+      nix = { "alejandra" }
+
     },
     -- Set up format-on-save
     -- format_on_save = { timeout_ms = 500, lsp_fallback = true },

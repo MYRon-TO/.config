@@ -65,3 +65,12 @@ yazi/plugins/**
 noctalia/plugins.json
 noctalia/plugins/**
 nvim/lazy-lock.json
+
+!nix
+!nix/**
+nix/nix.conf
+nix/macos-keychain.crt
+
+!nix-darwin
+!nix-darwin/**
+nvim/lua/env/not_to_sysnc.lua
