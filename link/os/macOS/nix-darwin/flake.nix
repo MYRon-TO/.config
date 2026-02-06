@@ -3,17 +3,14 @@
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
-    # nixpkgs-darwin.url = "github:nixos/nixpkgs/nixpkgs-unstable";
-    nix-darwin.url = "github:nix-darwin/nix-darwin";
 
     # home-manager, used for managing user configuration
     home-manager = {
       url = "github:nix-community/home-manager/master";
-      # inputs.nixpkgs.follows = "nixpkgs-darwin";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    darwin = {
+    nix-darwin = {
       url = "github:nix-darwin/nix-darwin/master";
       inputs.nixpkgs.follows = "nixpkgs";
     };
@@ -26,7 +23,6 @@
     home-manager,
     ...
   }: let
-    system = "aarch64-darwin";
     hostname = "TOS-MAC";
     username = "miaoyuanrong";
 
@@ -37,22 +33,22 @@
         gitCommitHash = self.rev or self.dirtyRev or null;
       };
 
-    configuration = {pkgs, ...}: {
-      # The platform the configuration will be used on.
-      nixpkgs.hostPlatform = "${system}";
-    };
-
+    # configuration = {pkgs, ...}: {
+    #   # The platform the configuration will be used on.
+    #   nixpkgs.hostPlatform = "${system}";
+    # };
   in {
     # Build darwin flake using:
     # $ darwin-rebuild build --flake .#TOS-MAC
     darwinConfigurations."${hostname}" = nix-darwin.lib.darwinSystem {
-      inherit system specialArgs;
+      system = "aarch64-darwin";
+      inherit specialArgs;
       modules = [
         ./modules/system.nix
         ./modules/core.nix
         ./modules/host_users.nix
         ./modules/apps.nix
-        ./modules/brew-mirror.nix
+        ./modules/brew_mirror.nix
 
         home-manager.darwinModules.home-manager
         {
@@ -61,6 +57,15 @@
           home-manager.extraSpecialArgs = specialArgs;
           home-manager.users.${username} = import ./home;
         }
+      ];
+    };
+
+    homeConfigurations."${username}@${hostname}" = home-manager.lib.homeManagerConfiguration {
+      pkgs = nixpkgs.legacyPackages."x86_64-linux";
+      extraSpecialArgs = specialArgs;
+
+      modules = [
+        ./home
       ];
     };
   };

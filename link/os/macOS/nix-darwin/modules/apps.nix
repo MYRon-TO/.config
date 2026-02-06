@@ -9,7 +9,9 @@
   # Related Discussion: https://discourse.nixos.org/t/darwin-again/29331
   environment.systemPackages = with pkgs; [
     git
+    neovim
   ];
+  environment.variables.EDITOR = "nvim";
 
   # The apps installed by homebrew are not managed by nix, and not reproducible!
   # But on macOS, homebrew has a much larger selection of apps than nixpkgs, especially for GUI apps!
@@ -23,18 +25,35 @@
       cleanup = "zap";
     };
 
+    masApps = {
+      Xcode = 497799835;
+      # Wechat = 836500024;
+      # QQ = 451108668;
+    };
+
     taps = [
       "homebrew/services"
+      "daipeihust/tap"
     ];
 
     # `brew install`
     brews = [
-      # "aria2"  # download tool
+      # auto switch input method on macOS
+      "im-select"
+
+      "wget"
+      "curl"
     ];
 
     # `brew install --cask`
     casks = [
-      # "google-chrome"
+      "google-chrome"
+      "zen"
+
+      "qbittorrent"
+      "iina"
+
+      "kitty"
     ];
   };
 }

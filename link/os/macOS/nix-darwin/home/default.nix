@@ -2,8 +2,10 @@
 
 {
   # import sub modules
-  # imports = [
-  # ];
+  imports = [
+    ./utils.nix
+    ./shell.nix
+  ];
 
   # Home Manager needs a bit of information about you and the
   # paths it should manage.
