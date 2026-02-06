@@ -11,6 +11,14 @@
     jq # A lightweight and flexible command-line JSON processor
     fzf # A command-line fuzzy finder
 
+    tmux
+    neofetch # A command-line system information tool
+    htop-vim
+    onefetch # A command-line Git repository summary tool
+
+    yazi
+    lazygit
+
     socat # replacement of openbsd-netcat
     nmap # A utility for network discovery and security auditing
 
@@ -22,7 +30,12 @@
     # productivity
     glow # markdown previewer in terminal
 
-    yazi
+    # develop
+    lua
+    rustup
+
+    # doc
+    typst
   ];
 
   programs = {

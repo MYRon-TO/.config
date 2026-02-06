@@ -10,6 +10,10 @@
   environment.systemPackages = with pkgs; [
     git
     neovim
+
+    pnpm
+    python315
+    nodejs_25
   ];
   environment.variables.EDITOR = "nvim";
 
@@ -27,12 +31,12 @@
 
     masApps = {
       Xcode = 497799835;
-      # Wechat = 836500024;
-      # QQ = 451108668;
+      Wechat = 836500024;
+      QQ = 451108668;
     };
 
     taps = [
-      "homebrew/services"
+      # "homebrew/services"
       "daipeihust/tap"
     ];
 
@@ -43,6 +47,12 @@
 
       "wget"
       "curl"
+
+      "tree-sitter-cli"
+
+      "gemini-cli"
+
+      "mole" # clean my mac
     ];
 
     # `brew install --cask`
@@ -54,6 +64,12 @@
       "iina"
 
       "kitty"
+
+      "orbstack"
+
+      "squirrel-app"
+
+      "finetune" # sound equalizer
     ];
   };
 }

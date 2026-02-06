@@ -86,7 +86,12 @@
       PNPM_HOME = "${config.home.homeDirectory}/.local/share/pnpm";
     };
 
-    initContent = ''
+    initExtra = ''
+
+      if [ -f /opt/homebrew/bin/brew ]; then
+        eval "$(/opt/homebrew/bin/brew shellenv)"
+      fi
+
       # Path configurations
       export PATH=$HOME/bin:$HOME/.config/scripts:/usr/local/bin:$HOME/.cargo/bin:$HOME/go/bin:$HOME/.local/bin:$PATH
       export PATH=$HOME/.cabal/bin:$HOME/.ghcup/bin:$PATH
@@ -100,7 +105,7 @@
       esac
 
       # Conda
-      [ -f /opt/miniforge/etc/profile.d/conda.sh ] && source /opt/miniforge/etc/profile.d/conda.sh
+      # [ -f /opt/miniforge/etc/profile.d/conda.sh ] && source /opt/miniforge/etc/profile.d/conda.sh
 
       # Yazi function
       function y() {
@@ -128,14 +133,14 @@
     enable = true;
     enableZshIntegration = true;
     defaultOptions = [
-      "--preview \"bat --style=numbers --color=always --line-range :500 {}\""
+      "--preview 'bat --style=numbers --color=always --line-range :500 {}'"
       "--color=fg:#cdd6f4,fg+:#d0d0d0,bg:#1e1e2e,bg+:#262626"
       "--color=hl:#f38ba8,hl+:#5fd7ff,info:#cba6f7,marker:#b4befe"
       "--color=prompt:#cba6f7,spinner:#f5e0dc,pointer:#f5e0dc,header:#f38ba8"
       "--color=border:#262626,label:#aeaeae,query:#d9d9d9"
-      "--border=\"rounded\" --border-label=\"\" --preview-window=\"border-rounded\" --prompt=\"⪢ \""
-      "--marker=\"> \" --pointer=\"⪢ \" --separator=\"-\" --scrollbar=\"│\""
-      "--info=\"right\""
+      "--border='rounded' --border-label='' --preview-window='border-rounded' --prompt='⪢ '"
+      "--marker='> ' --pointer='⪢ ' --separator='-' --scrollbar='│'"
+      "--info='right'"
     ];
   };
 }

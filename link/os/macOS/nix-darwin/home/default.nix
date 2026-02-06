@@ -1,10 +1,9 @@
-{ username, ... }:
-
-{
+{username,lib, ...}: {
   # import sub modules
   imports = [
     ./utils.nix
     ./shell.nix
+    ./rime.nix
   ];
 
   # Home Manager needs a bit of information about you and the
@@ -26,4 +25,9 @@
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
+
+  nix.gc = {
+    automatic = lib.mkDefault true;
+    options = lib.mkDefault "--delete-older-than 7d";
+  };
 }

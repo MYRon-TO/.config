@@ -23,8 +23,8 @@
     home-manager,
     ...
   }: let
-    hostname = "TOS-MAC";
-    username = "miaoyuanrong";
+    hostname = "Myron-Macbook";
+    username = "myron";
 
     specialArgs =
       inputs

@@ -1,6 +1,5 @@
 *
 
-
 !link/
 !link/**
 
@@ -61,3 +60,6 @@ noctalia/plugins.json
 noctalia/plugins/**
 
 !makefile
+
+.DS_Store
+link/os/macOS/nix/macos-keychain.crt
