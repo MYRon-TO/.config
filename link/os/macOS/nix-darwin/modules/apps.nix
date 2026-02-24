@@ -14,6 +14,8 @@
     pnpm
     python315
     nodejs_25
+
+    cmake
   ];
   environment.variables.EDITOR = "nvim";
 
@@ -21,6 +23,8 @@
   # But on macOS, homebrew has a much larger selection of apps than nixpkgs, especially for GUI apps!
   homebrew = {
     enable = true;
+
+    caskArgs.no_quarantine = false;
 
     onActivation = {
       autoUpdate = true;
@@ -38,6 +42,8 @@
     taps = [
       # "homebrew/services"
       "daipeihust/tap"
+      "anomalyco/tap"
+      "gcenx/wine"
     ];
 
     # `brew install`
@@ -53,6 +59,8 @@
       "gemini-cli"
 
       "mole" # clean my mac
+
+      "anomalyco/tap/opencode" # ai-agent
     ];
 
     # `brew install --cask`
@@ -70,6 +78,10 @@
       "squirrel-app"
 
       "finetune" # sound equalizer
+
+      # "gcenx/wine/game-porting-toolkit"
+      # "gcenx/wine/wine-crossover"
+      "Sikarugir-App/sikarugir/sikarugir"
     ];
   };
 }

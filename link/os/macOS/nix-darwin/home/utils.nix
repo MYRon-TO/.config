@@ -33,6 +33,7 @@
     # develop
     lua
     rustup
+    uv
 
     # doc
     typst

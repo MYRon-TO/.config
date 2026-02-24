@@ -84,6 +84,9 @@
 
       # PNPM
       PNPM_HOME = "${config.home.homeDirectory}/.local/share/pnpm";
+
+
+      WINEPREFIX= "${config.home.homeDirectory}/Git/game-porting/volume";
     };
 
     initExtra = ''
