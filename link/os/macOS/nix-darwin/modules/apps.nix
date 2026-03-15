@@ -9,6 +9,7 @@
   # Related Discussion: https://discourse.nixos.org/t/darwin-again/29331
   environment.systemPackages = with pkgs; [
     git
+    git-lfs
     neovim
 
     pnpm
@@ -30,7 +31,8 @@
       autoUpdate = true;
       upgrade = true;
       # 'zap': uninstalls all formulae(and related files) not listed here.
-      cleanup = "zap";
+      # cleanup = "zap";
+      cleanup = "none";
     };
 
     masApps = {
