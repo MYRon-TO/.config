@@ -1,0 +1,22 @@
+{
+  "general": {
+    "vimMode": true,
+    "previewFeatures": true
+  },
+  "security": {
+    "auth": {
+      "selectedType": "oauth-personal"
+    }
+  },
+  "mcpServers": {
+    "context7": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@upstash/context7-mcp",
+        "--api-key",
+        "ctx7sk-b37cb44b-dcdf-469e-9e3b-cac2a6666b2a"
+      ]
+    }
+  }
+}
