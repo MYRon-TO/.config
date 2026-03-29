@@ -58,6 +58,10 @@ yazi/plugins/**
 !noctalia/**
 noctalia/plugins.json
 noctalia/plugins/**
+nvim/lazy-lock.json
+
+!opencode
+!opencode/**
 
 !makefile
 
