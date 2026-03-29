@@ -89,7 +89,7 @@
       WINEPREFIX= "${config.home.homeDirectory}/Git/game-porting/volume";
     };
 
-    initExtra = ''
+    initContent = ''
 
       if [ -f /opt/homebrew/bin/brew ]; then
         eval "$(/opt/homebrew/bin/brew shellenv)"
