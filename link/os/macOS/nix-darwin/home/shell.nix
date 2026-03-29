@@ -33,7 +33,7 @@
 
     shellAliases = {
       q = "exit";
-      s = "neofetch";
+      s = "fastfetch";
       lg = "lazygit";
       py = "python3";
       ll = "ls -al";

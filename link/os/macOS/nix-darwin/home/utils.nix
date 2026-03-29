@@ -5,6 +5,7 @@
     xz
     unzip
     p7zip
+    ouch
 
     # utils
     ripgrep # recursively searches directories for a regex pattern
@@ -12,7 +13,7 @@
     fzf # A command-line fuzzy finder
 
     tmux
-    neofetch # A command-line system information tool
+    fastfetch # A command-line system information tool
     htop-vim
     onefetch # A command-line Git repository summary tool
 

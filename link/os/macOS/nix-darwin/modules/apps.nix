@@ -63,6 +63,8 @@
       "mole" # clean my mac
 
       "anomalyco/tap/opencode" # ai-agent
+
+      "cabextract"
     ];
 
     # `brew install --cask`
