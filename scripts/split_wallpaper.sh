@@ -75,7 +75,7 @@ for M in "${MONS[@]}"; do
 
     echo "裁切 $NAME: ${CROP_W}x${CROP_H}+${CROP_X}+${CROP_Y} (旋转: $ROTATE°) → $OUT"
     magick "$TMPIMG" -crop ${CROP_W}x${CROP_H}+${CROP_X}+${CROP_Y} +repage "$OUT"
-    swww img -o "$NAME" "$OUT"
+    # swww img -o "$NAME" "$OUT"
 done
 
 # rm "$TMPIMG"

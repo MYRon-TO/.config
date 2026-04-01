@@ -17,7 +17,7 @@ export FLUTTER_STORAGE_BASE_URL=https://mirrors.tuna.tsinghua.edu.cn/flutter
 # ** DarkMode
 export GTK_THEME=Adwaita:dark
 export GTK2_RC_FILES=/usr/share/themes/Adwaita-dark/gtk-2.0/gtkrc
-export QT_STYLE_OVERRIDE=Adwaita-Dark.
+# export QT_STYLE_OVERRIDE=Adwaita-Dark.
 
 # * Fcitx5
 # export GTK_IM_MODULE=fcitx
@@ -50,7 +50,7 @@ export PATH=/usr/local/texlive/2024/bin/x86_64-linux:$PATH
 
 # * Alias
 alias q="exit"
-alias s="neofetch"
+alias s="fastfetch"
 alias lg="lazygit"
 alias py="python3"
 alias ll="ls -al"
@@ -60,7 +60,7 @@ alias keyboard="bluetoothctl connect F1:EF:01:DE:A7:D6"
 alias doom="~/.config/emacs/bin/doom"
 # alias webui="docker start open-webui"
 alias lzd="lazydocker"
-alias HP="Hyprland"
+alias HP="start-hyprland"
 # alias tlmgr='/usr/share/texmf-dist/scripts/texlive/tlmgr.pl --usermode'
 
 function y() {
@@ -190,3 +190,4 @@ export FZF_DEFAULT_OPTS=$FZF_DEFAULT_OPTS'
   --border="rounded" --border-label="" --preview-window="border-rounded" --prompt="⪢ "
   --marker="> " --pointer="⪢ " --separator="-" --scrollbar="│"
   --info="right"'
+export PATH="$HOME/.npm-global/bin:$PATH"

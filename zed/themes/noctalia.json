@@ -340,7 +340,7 @@
         "title_bar.inactive_background": "#b2b7ff",
         "toolbar.background": "#eaecfc",
         "tab_bar.background": "#eff0ff",
-        "tab.inactive_backgorround": "#eaecfc",
+        "tab.inactive_background": "#eaecfc",
         "tab.active_background": "#dbddff",
         "search.match_background": "#4949bb80",
         "panel.background": "#eaecfc",
