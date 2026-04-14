@@ -85,5 +85,5 @@ local rime_ls = {
 
 return {
   im_select,
-  rime_ls
+  -- rime_ls
 }
