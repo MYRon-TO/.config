@@ -2,6 +2,7 @@ require("env")
 require("basic/options")
 require("basic/keymap")
 require("basic/filetype")
+require("basic/treesitter")
 
 -- lazy.nvim
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
