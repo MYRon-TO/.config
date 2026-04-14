@@ -38,13 +38,13 @@ return {
       indent = indent,
       input = { enabled = true },
       lazygit = { enabled = true },
-      picker = { enabled = true },
-      notifier = { enabled = true },
+      picker = { enabled = false },
+      notifier = { enabled = false },
       quickfile = { enabled = true },
       scope = { enabled = true },
       scroll = { enabled = true },
       statuscolumn = { enabled = true },
-      words = { enabled = true },
+      words = { enabled = false },
     },
     init = function()
       vim.api.nvim_create_user_command("LazyGit", function()

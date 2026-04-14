@@ -1,10 +1,10 @@
-require("env/not_to_sysnc")
+require("env/local")
 
 ENV = {}
 
 vim.env.PATH = vim.fn.stdpath("data") .. "/mason/bin:" .. vim.env.PATH
 
-ENV.enable_kitty_smart_splits = ENABLE_KITTY_SPLIT
+ENV.enable_kitty_smart_splits = ENABLE_KITTY_SPLIT == true
 
 if IS_LINUX then
   ENV.im_select = {
@@ -14,7 +14,6 @@ if IS_LINUX then
 
   ENV.delta_path = "/usr/bin/delta"
 
-  ENV.rime_shared_data_dir = "/usr/share/rime-data"
 else
   ENV.im_select = {
     default_im_select = "com.apple.keylayout.ABC",
@@ -23,5 +22,4 @@ else
 
   ENV.delta_path = "/opt/homebrew/bin/delta"
 
-  ENV.rime_shared_data_dir = "/Library/Input Methods/Squirrel.app/Contents/SharedSupport"
 end

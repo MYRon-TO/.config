@@ -1,14 +1,5 @@
 return {
   {
-    -- make sure installled pnpm and live-server
-    'barrett-ruth/live-server.nvim',
-    lazy = true,
-    build = 'pnpm add -g live-server',
-    cmd = { 'LiveServerStart', 'LiveServerStop' },
-    ft = { 'html' },
-    config = true
-  },
-  {
     'NvChad/nvim-colorizer.lua',
     event = "VeryLazy",
     config = function()

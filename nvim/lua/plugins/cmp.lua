@@ -1,4 +1,3 @@
--- for rime_ls
 vim.opt.iskeyword = "_,49-57,A-Z,a-z"
 
 local luasnip = {

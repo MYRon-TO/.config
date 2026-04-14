@@ -33,7 +33,7 @@ local rust = {
 local haskell = {
   'mrcjkb/haskell-tools.nvim',
   -- version = '^4', -- Recommended
-  lazy = false,   -- This plugin is already lazy
+  lazy = true,
   ft = { 'haskell' },
 }
 
@@ -67,6 +67,6 @@ local flutter = {
 return {
   rust,
   haskell,
-  -- tex,
+  tex,
   flutter,
 }

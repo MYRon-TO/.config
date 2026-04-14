@@ -1,3 +1,3 @@
 return {
-  COLORSHAME
+  require("colorscheme/catppuccin")
 }

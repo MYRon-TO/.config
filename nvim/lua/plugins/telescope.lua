@@ -10,22 +10,30 @@ local telescope = {
   keys = {
     {
       '<leader>fh',
-      require('telescope.builtin').help_tags,
+      function()
+        require('telescope.builtin').help_tags()
+      end,
       desc = "Help (Telescope)"
     },
     {
       '<leader>fb',
-      require('telescope.builtin').buffers,
+      function()
+        require('telescope.builtin').buffers()
+      end,
       desc = "Buffers (Telescope)"
     },
     {
       '<leader>fg',
-      require('telescope.builtin').live_grep,
+      function()
+        require('telescope.builtin').live_grep()
+      end,
       desc = "Live Grep (Telescope)"
     },
     {
       "<leader>ff",
-      require('telescope.builtin').git_files,
+      function()
+        require('telescope.builtin').git_files()
+      end,
       desc = "Git Files (Telescope)",
     },
     {
@@ -85,7 +93,6 @@ local telescope = {
       },
     }
     require('telescope').load_extension('fzf')
-    require('telescope').load_extension('ht')
   end
 }
 

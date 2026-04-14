@@ -6,8 +6,10 @@ local dap_package = {
 local compile = function()
   vim.cmd("write")
   local filetype = vim.bo.filetype
-  if filetype == "cpp" or filetype == "c" then
+  if filetype == "c" then
     os.execute("gcc " .. vim.fn.expand("%") .. " -g -o " .. vim.fn.expand("%<"))
+  elseif filetype == "cpp" then
+    os.execute("g++ " .. vim.fn.expand("%") .. " -g -o " .. vim.fn.expand("%<"))
   end
 end
 
