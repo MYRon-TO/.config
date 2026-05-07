@@ -68,3 +68,5 @@ nvim/lazy-lock.json
 .DS_Store
 link/os/macOS/nix/macos-keychain.crt
 /nvim/docs
+/link/home/.pi/agent/auth.json
+/link/home/.pi/agent/sessions
