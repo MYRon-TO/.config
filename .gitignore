@@ -10,6 +10,9 @@ link/os/macOS/nix/macos-keychain.crt
 
 link/home/.pi/agent/**
 !link/home/.pi/agent/settings.json
+!link/home/.pi/agent/SYSTEM.md
+!link/home/.pi/agent/prompts
+!link/home/.pi/agent/prompts/**
 
 !kitty
 !kitty/**
