@@ -6,6 +6,11 @@
 link/home/.gemini/**
 !link/home/.gemini/settings.json
 
+link/os/macOS/nix/macos-keychain.crt
+
+link/home/.pi/agent/**
+!link/home/.pi/agent/settings.json
+
 !kitty
 !kitty/**
 kitty/os.conf
@@ -42,6 +47,8 @@ kitty/os.conf
 !nvim/**
 nvim/lazy-lock.json
 nvim/lua/env/not_to_sysnc.lua
+nvim/docs
+nvim/lazy-lock.json
 
 !rofi
 !rofi/**
@@ -58,7 +65,6 @@ yazi/plugins/**
 !noctalia/**
 noctalia/plugins.json
 noctalia/plugins/**
-nvim/lazy-lock.json
 
 !opencode
 !opencode/**
@@ -66,7 +72,3 @@ nvim/lazy-lock.json
 !makefile
 
 .DS_Store
-link/os/macOS/nix/macos-keychain.crt
-/nvim/docs
-/link/home/.pi/agent/auth.json
-/link/home/.pi/agent/sessions

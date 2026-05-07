@@ -3,5 +3,16 @@
   "defaultProvider": "openai-codex",
   "defaultModel": "gpt-5.4",
   "defaultThinkingLevel": "medium",
-  "theme": "dark"
+  "theme": "catppuccin-mocha",
+  "packages": [
+    "git:github.com/dbachelder/pi-btw",
+    "npm:@marckrenn/pi-sub-bar",
+    "git:github.com/MasuRii/pi-tool-display",
+    "npm:@tmustier/pi-usage-extension",
+    "npm:@ifi/pi-plan",
+    "npm:@venomzen/pi-web-access-enhanced",
+    "npm:pi-rtk-optimizer",
+    "npm:pi-worktree",
+    "git:https://github.com/hasit/pi-community-themes"
+  ]
 }
