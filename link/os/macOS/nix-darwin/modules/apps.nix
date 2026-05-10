@@ -43,8 +43,8 @@
 
     taps = [
       # "homebrew/services"
-      "daipeihust/tap"
-      "anomalyco/tap"
+      "daipeihust/tap" # im-select
+      # "anomalyco/tap"
       "gcenx/wine"
     ];
 
@@ -58,11 +58,11 @@
 
       "tree-sitter-cli"
 
-      "gemini-cli"
+      # "gemini-cli"
 
       "mole" # clean my mac
 
-      "anomalyco/tap/opencode" # ai-agent
+      "opencode" # ai-agent
 
       "cabextract"
     ];
@@ -82,6 +82,8 @@
       "squirrel-app"
 
       "finetune" # sound equalizer
+
+      "foobar2000"
 
       # "gcenx/wine/game-porting-toolkit"
       # "gcenx/wine/wine-crossover"
