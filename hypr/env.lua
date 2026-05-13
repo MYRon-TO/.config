@@ -1,0 +1,5 @@
+hl.env("XCURSOR_SIZE", "24")
+hl.env("ELECTRON_OZONE_PLATFORM_HINT", "auto")
+hl.env("NVD_BACKEND", "direct")
+hl.env("HYPRCURSOR_THEME", "hyprcursor_Dracula")
+hl.env("QT_QPA_PLATFORMTHEME", "qt6ct")
