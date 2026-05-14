@@ -1,4 +1,4 @@
-{pkgs, ...}: {
+{pkgs, pi, ...}: {
   nixpkgs.config.allowUnfree = true; # Allow unfree packages;
 
   # Install packages from nix's official package repository.
@@ -17,6 +17,8 @@
     nodejs_25
 
     cmake
+
+    pi.packages.${pkgs.stdenv.hostPlatform.system}.coding-agent
   ];
   environment.variables.EDITOR = "nvim";
 
@@ -43,8 +45,8 @@
 
     taps = [
       # "homebrew/services"
-      "daipeihust/tap"
-      "anomalyco/tap"
+      "daipeihust/tap" # im-select
+      # "anomalyco/tap"
       "gcenx/wine"
     ];
 
@@ -58,11 +60,11 @@
 
       "tree-sitter-cli"
 
-      "gemini-cli"
+      # "gemini-cli"
 
       "mole" # clean my mac
 
-      "anomalyco/tap/opencode" # ai-agent
+      "opencode" # ai-agent
 
       "cabextract"
     ];
@@ -82,6 +84,8 @@
       "squirrel-app"
 
       "finetune" # sound equalizer
+
+      "foobar2000"
 
       # "gcenx/wine/game-porting-toolkit"
       # "gcenx/wine/wine-crossover"

@@ -1,2 +1,2 @@
-IS_LINUX = true
+IS_LINUX = false
 ENABLE_KITTY_SPLIT = false
