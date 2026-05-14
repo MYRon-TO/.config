@@ -1,4 +1,4 @@
-{pkgs, ...}: {
+{pkgs, pi, ...}: {
   nixpkgs.config.allowUnfree = true; # Allow unfree packages;
 
   # Install packages from nix's official package repository.
@@ -17,6 +17,8 @@
     nodejs_25
 
     cmake
+
+    pi.packages.${pkgs.stdenv.hostPlatform.system}.coding-agent
   ];
   environment.variables.EDITOR = "nvim";
 
