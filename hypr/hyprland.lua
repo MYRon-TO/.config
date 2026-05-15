@@ -111,9 +111,9 @@ hl.permission({
 -- Keybinds
 require("keybinds")
 
--- Plugins
-require("plugins")
-
 -- Apps
 require("app.pot").setup()
 require("app.quickshell").setup()
+
+-- Plugins
+require("plugins")

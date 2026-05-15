@@ -191,3 +191,6 @@ export FZF_DEFAULT_OPTS=$FZF_DEFAULT_OPTS'
   --marker="> " --pointer="⪢ " --separator="-" --scrollbar="│"
   --info="right"'
 export PATH="$HOME/.npm-global/bin:$PATH"
+
+# Set up fzf key bindings and fuzzy completion
+source <(fzf --zsh)
