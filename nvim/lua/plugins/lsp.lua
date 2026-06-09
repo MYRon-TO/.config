@@ -64,8 +64,9 @@ local mason = {
       require("mason").setup()
       local mason_packages = {
         "sqlfmt",      -- SQL
-        "isort",       -- Python
-        "black",       -- Python
+        -- "isort",       -- Python
+        -- "black",       -- Python
+        "ruff",
         "latexindent", -- tex
         "prettierd",
 

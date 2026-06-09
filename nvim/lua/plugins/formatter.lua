@@ -48,7 +48,8 @@ return {
 
       -- * code
       lua = { "stylua" },
-      python = { "isort", "black" }, -- isort first, then black
+      -- python = { "isort", "black" }, -- isort first, then black
+      python = { "ruff" },
       shell = { "shfmt" },
 
       -- rust = { "dprint", "rustfmt", stop_after_first = true },
