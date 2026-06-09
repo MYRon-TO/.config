@@ -85,11 +85,13 @@
 
       "finetune" # sound equalizer
 
-      "foobar2000"
+      # "foobar2000"
 
       # "gcenx/wine/game-porting-toolkit"
       # "gcenx/wine/wine-crossover"
       "Sikarugir-App/sikarugir/sikarugir"
+
+      "hammerspoon"
     ];
   };
 }
