@@ -17,7 +17,8 @@
       "extensions": [
         "+index.ts"
       ]
-    }
+    },
+    "npm:@tmustier/pi-usage-extension"
   ],
   "hideThinkingBlock": false
 }
