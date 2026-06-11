@@ -1,4 +1,4 @@
-{pkgs, pi, ...}: {
+{pkgs, ...}: {
   nixpkgs.config.allowUnfree = true; # Allow unfree packages;
 
   # Install packages from nix's official package repository.
@@ -18,7 +18,9 @@
 
     cmake
 
-    pi.packages.${pkgs.stdenv.hostPlatform.system}.coding-agent
+    fd
+
+    # pi.packages.${pkgs.stdenv.hostPlatform.system}.coding-agent
   ];
   environment.variables.EDITOR = "nvim";
 
@@ -67,6 +69,8 @@
       "opencode" # ai-agent
 
       "cabextract"
+
+      "pi-coding-agent"
     ];
 
     # `brew install --cask`
