@@ -16,6 +16,11 @@ link/home/.pi/agent/**
 !link/home/.pi/agent/extensions
 !link/home/.pi/agent/extensions/**
 
+link/home/.hammerspoon/Spoons/**
+!link/home/.hammerspoon/Spoons/SpoonInstall.spoon
+!link/home/.hammerspoon/Spoons/SpoonInstall.spoon/**
+
+
 !kitty
 !kitty/**
 kitty/os.conf
