@@ -75,3 +75,5 @@ noctalia/plugins/**
 !makefile
 
 .DS_Store
+/htop/htop_history
+/nvim/lua/env/local.lua
