@@ -13,6 +13,13 @@ link/home/.pi/agent/**
 !link/home/.pi/agent/SYSTEM.md
 !link/home/.pi/agent/prompts
 !link/home/.pi/agent/prompts/**
+!link/home/.pi/agent/extensions
+!link/home/.pi/agent/extensions/**
+
+link/home/.hammerspoon/Spoons/**
+!link/home/.hammerspoon/Spoons/SpoonInstall.spoon
+!link/home/.hammerspoon/Spoons/SpoonInstall.spoon/**
+
 
 !kitty
 !kitty/**

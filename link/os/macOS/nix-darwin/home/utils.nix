@@ -6,6 +6,7 @@
     unzip
     p7zip
     ouch
+    rar
 
     # utils
     ripgrep # recursively searches directories for a regex pattern
