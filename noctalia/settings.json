@@ -189,7 +189,8 @@
                         "Keyboard - English (US)",
                         "Clash Party",
                         "Podman Desktop is ready",
-                        "NordVPN"
+                        "NordVPN",
+                        "Clash Party\n模式: 规则模式\n系统代理: 关闭\n虚拟网卡: 开启"
                     ]
                 },
                 {
@@ -476,7 +477,7 @@
         "bluetoothRssiPollIntervalMs": 10000,
         "bluetoothRssiPollingEnabled": false,
         "disableDiscoverability": false,
-        "networkPanelView": "ethernet",
+        "networkPanelView": "wifi",
         "wifiDetailsViewMode": "grid"
     },
     "nightLight": {

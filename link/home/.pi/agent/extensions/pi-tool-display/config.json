@@ -1,12 +1,12 @@
 {
   "debug": false,
   "registerToolOverrides": {
-    "read": true,
-    "grep": true,
+    "read": false,
+    "grep": false,
     "find": false,
     "ls": false,
-    "bash": true,
-    "edit": true,
+    "bash": false,
+    "edit": false,
     "write": false
   },
   "enableNativeUserMessageBox": true,
