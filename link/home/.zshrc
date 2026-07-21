@@ -61,6 +61,7 @@ alias doom="~/.config/emacs/bin/doom"
 # alias webui="docker start open-webui"
 alias lzd="lazydocker"
 alias HP="start-hyprland"
+alias pia='pi -e npm:pi-subagents'
 # alias tlmgr='/usr/share/texmf-dist/scripts/texlive/tlmgr.pl --usermode'
 
 function y() {

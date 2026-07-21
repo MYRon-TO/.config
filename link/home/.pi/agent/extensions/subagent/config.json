@@ -1,0 +1,9 @@
+{
+  "toolDescriptionMode": "compact",
+  "asyncByDefault": false,
+  "maxSubagentDepth": 1,
+  "parallel": {
+    "maxTasks": 6,
+    "concurrency": 2
+  }
+}

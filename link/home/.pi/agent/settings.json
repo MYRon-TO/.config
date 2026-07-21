@@ -1,14 +1,13 @@
 {
   "lastChangelogVersion": "0.78.1",
   "defaultProvider": "openai-codex",
-  "defaultModel": "gpt-5.5",
-  "defaultThinkingLevel": "medium",
+  "defaultModel": "gpt-5.6-sol",
+  "defaultThinkingLevel": "minimal",
   "theme": "catppuccin-mocha",
   "packages": [
     "git:github.com/dbachelder/pi-btw",
     "npm:@marckrenn/pi-sub-bar",
     "npm:@ifi/pi-plan",
-    "npm:@venomzen/pi-web-access-enhanced",
     "npm:pi-worktree",
     "git:https://github.com/hasit/pi-community-themes",
     "npm:pi-hashline-readmap",
@@ -18,7 +17,42 @@
         "+index.ts"
       ]
     },
-    "npm:@tmustier/pi-usage-extension"
+    "npm:@tmustier/pi-usage-extension",
+    "npm:pi-web-access"
   ],
+  "subagents": {
+    "defaultModel": "gpt-5.6-sol",
+    "disableBuiltins": true,
+    "agentOverrides": {
+      "worker": {
+        "thinking": "low",
+        "defaultContext": "fresh",
+        "systemPromptMode": "replace",
+        "inheritProjectContext": false
+      },
+      "reviewer": {
+        "disabled": true,
+        "thinking": "low",
+        "defaultContext": "fresh",
+        "systemPromptMode": "replace",
+        "inheritProjectContext": false
+      },
+      "planner": {
+        "disabled": true
+      },
+      "oracle": {
+        "disabled": true
+      },
+      "researcher": {
+        "disabled": true
+      },
+      "context-builder": {
+        "disabled": true
+      },
+      "delegate": {
+        "disabled": true
+      }
+    }
+  },
   "hideThinkingBlock": false
 }
