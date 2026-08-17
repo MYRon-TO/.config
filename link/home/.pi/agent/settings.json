@@ -1,8 +1,8 @@
 {
   "lastChangelogVersion": "0.78.1",
-  "defaultProvider": "deepseek",
-  "defaultModel": "deepseek-v4-flash",
-  "defaultThinkingLevel": "low",
+  "defaultProvider": "openai-codex",
+  "defaultModel": "gpt-5.6-sol",
+  "defaultThinkingLevel": "medium",
   "theme": "catppuccin-mocha",
   "packages": [
     "git:github.com/dbachelder/pi-btw",
@@ -31,8 +31,9 @@
         "inheritProjectContext": false
       },
       "reviewer": {
-        "disabled": true,
-        "thinking": "low",
+        "model": "deepseek/deepseek-v4-flash",
+        "disabled": false,
+        "thinking": "high",
         "defaultContext": "fresh",
         "systemPromptMode": "replace",
         "inheritProjectContext": false
