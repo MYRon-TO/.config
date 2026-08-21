@@ -15,6 +15,7 @@ link/home/.pi/agent/**
 !link/home/.pi/agent/prompts/**
 !link/home/.pi/agent/extensions
 !link/home/.pi/agent/extensions/**
+link/home/.pi/web-search-cache
 
 link/home/.hammerspoon/Spoons/**
 !link/home/.hammerspoon/Spoons/SpoonInstall.spoon
@@ -33,6 +34,7 @@ kitty/os.conf
 
 !htop
 !htop/**
+htop/htop_history
 
 
 !hypr
@@ -57,6 +59,7 @@ kitty/os.conf
 !nvim/**
 nvim/lazy-lock.json
 nvim/lua/env/not_to_sysnc.lua
+nvim/lua/env/local.lua
 nvim/docs
 nvim/lazy-lock.json
 
@@ -82,5 +85,3 @@ noctalia/plugins/**
 !makefile
 
 .DS_Store
-/htop/htop_history
-/nvim/lua/env/local.lua
