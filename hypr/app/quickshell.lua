@@ -1,13 +1,13 @@
 -- Quickshell / Noctalia
 return {
   setup = function()
-    KeyBind(MainMod .. " + Space", Exec("qs -c noctalia-shell ipc call launcher toggle"))
-    KeyBind(MainMod .. " + V", Exec("qs -c noctalia-shell ipc call launcher clipboard"))
-    KeyBind(MainMod .. " + SHIFT + V", Exec("qs -c noctalia-shell ipc call launcher emoji"))
-    KeyBind("XF86AudioRaiseVolume", Exec("qs -c noctalia-shell ipc call volume increase"),
+    KeyBind(MainMod .. " + Space", Exec("noctalia msg panel-toggle launcher"))
+    KeyBind(MainMod .. " + V", Exec("noctalia msg panel-toggle clipboard"))
+    KeyBind(MainMod .. " + SHIFT + V", Exec("noctalia msg panel-toggle launcher /emo"))
+    KeyBind("XF86AudioRaiseVolume", Exec("noctalia msg volume-up"),
       { repeating = true, locked = true })
-    KeyBind("XF86AudioLowerVolume", Exec("qs -c noctalia-shell ipc call volume decrease"),
+    KeyBind("XF86AudioLowerVolume", Exec("noctalia msg volume-down"),
       { repeating = true, locked = true })
-    KeyBind("XF86AudioMute", Exec("qs -c noctalia-shell ipc call volume muteOutput"), { locked = true })
+    KeyBind("XF86AudioMute", Exec("noctalia msg volume-mute"), { locked = true })
   end
 }
