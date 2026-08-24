@@ -2,7 +2,7 @@
   "lastChangelogVersion": "0.78.1",
   "defaultProvider": "openai-codex",
   "defaultModel": "gpt-5.6-sol",
-  "defaultThinkingLevel": "medium",
+  "defaultThinkingLevel": "high",
   "theme": "catppuccin-mocha",
   "packages": [
     "git:github.com/dbachelder/pi-btw",
@@ -55,5 +55,5 @@
       }
     }
   },
-  "hideThinkingBlock": true
+  "hideThinkingBlock": false
 }
