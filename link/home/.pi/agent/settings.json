@@ -1,5 +1,5 @@
 {
-  "lastChangelogVersion": "0.84.3",
+  "lastChangelogVersion": "0.84.4",
   "defaultProvider": "openai-codex",
   "defaultModel": "gpt-5.6-sol",
   "defaultThinkingLevel": "medium",
@@ -8,16 +8,28 @@
     "git:github.com/dbachelder/pi-btw",
     "npm:@marckrenn/pi-sub-bar",
     "npm:@ifi/pi-plan",
-    "npm:pi-worktree",
+    {
+      "source": "npm:pi-worktree",
+      "extensions": [
+        "+extensions/worktree.ts"
+      ]
+    },
     "git:https://github.com/hasit/pi-community-themes",
     "npm:pi-hashline-readmap",
     {
       "source": "git:github.com/MasuRii/pi-tool-display",
-      "extensions": ["+index.ts"]
+      "extensions": [
+        "+index.ts"
+      ]
     },
     "npm:@tmustier/pi-usage-extension",
     "npm:pi-web-access",
-    "npm:pi-cbm"
+    {
+      "source": "npm:pi-cbm",
+      "extensions": [
+        "+src/index.ts"
+      ]
+    }
   ],
   "subagents": {
     "defaultModel": "gpt-5.6-sol",
@@ -26,7 +38,7 @@
       "worker": {
         "model": "openai-codex/gpt-5.6-sol",
         "thinking": "low",
-        "defaultContext": "fresh",
+        "defaultContext": "fresh"
       },
       "reviewer": {
         "model": "deepseek/deepseek-v4-flash",
