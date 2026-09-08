@@ -1,8 +1,8 @@
 {
-  "lastChangelogVersion": "0.84.4",
+  "lastChangelogVersion": "0.85.1",
   "defaultProvider": "openai-codex",
-  "defaultModel": "gpt-5.6-sol",
-  "defaultThinkingLevel": "medium",
+  "defaultModel": "gpt-6-astra",
+  "defaultThinkingLevel": "low",
   "theme": "catppuccin-mocha",
   "packages": [
     "git:github.com/dbachelder/pi-btw",
@@ -29,7 +29,8 @@
       "extensions": [
         "+src/index.ts"
       ]
-    }
+    },
+    "npm:avtc-pi-notification"
   ],
   "subagents": {
     "defaultModel": "gpt-5.6-sol",
@@ -37,13 +38,13 @@
     "agentOverrides": {
       "worker": {
         "model": "openai-codex/gpt-5.6-sol",
-        "thinking": "low",
+        "thinking": "medium",
         "defaultContext": "fresh"
       },
       "reviewer": {
-        "model": "deepseek/deepseek-v4-flash",
+        "model": "opencode-go/glm-5.3-flash",
         "disabled": false,
-        "thinking": "high",
+        "thinking": "medium",
         "defaultContext": "fresh",
         "systemPromptMode": "replace",
         "inheritProjectContext": false
@@ -63,6 +64,19 @@
       "delegate": {
         "disabled": true
       }
+    }
+  },
+  "avtc-pi-notifications": {
+    "bell": true,
+    "bellDelay": "30s",
+    "telegram": {
+      "enabled": true,
+      "chatId": "5732158113",
+      "delay": "45s",
+      "includePrompt": true,
+      "includeToolErrors": true,
+      "includeLeaf": false,
+      "includeStarted": true
     }
   },
   "hideThinkingBlock": false
