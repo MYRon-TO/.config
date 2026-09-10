@@ -1,4 +1,6 @@
 {
+  "timeoutMs": 3600000,
+  "toolTimeoutMs": 1200000,
   "toolDescriptionMode": "compact",
   "asyncByDefault": false,
   "maxSubagentDepth": 1,

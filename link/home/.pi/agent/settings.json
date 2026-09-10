@@ -1,14 +1,19 @@
 {
-  "lastChangelogVersion": "0.78.1",
-  "defaultProvider": "deepseek",
-  "defaultModel": "deepseek-v4-flash",
+  "lastChangelogVersion": "0.85.1",
+  "defaultProvider": "openai-codex",
+  "defaultModel": "gpt-6-astra",
   "defaultThinkingLevel": "low",
   "theme": "catppuccin-mocha",
   "packages": [
     "git:github.com/dbachelder/pi-btw",
     "npm:@marckrenn/pi-sub-bar",
     "npm:@ifi/pi-plan",
-    "npm:pi-worktree",
+    {
+      "source": "npm:pi-worktree",
+      "extensions": [
+        "+extensions/worktree.ts"
+      ]
+    },
     "git:https://github.com/hasit/pi-community-themes",
     "npm:pi-hashline-readmap",
     {
@@ -18,21 +23,29 @@
       ]
     },
     "npm:@tmustier/pi-usage-extension",
-    "npm:pi-web-access"
+    "npm:pi-web-access",
+    {
+      "source": "npm:pi-cbm",
+      "extensions": [
+        "+src/index.ts"
+      ]
+    },
+    "npm:avtc-pi-notification",
+    "npm:@hk_net/remote-pi"
   ],
   "subagents": {
     "defaultModel": "gpt-5.6-sol",
     "disableBuiltins": true,
     "agentOverrides": {
       "worker": {
-        "thinking": "low",
-        "defaultContext": "fresh",
-        "systemPromptMode": "replace",
-        "inheritProjectContext": false
+        "model": "openai-codex/gpt-5.6-sol",
+        "thinking": "medium",
+        "defaultContext": "fresh"
       },
       "reviewer": {
-        "disabled": true,
-        "thinking": "low",
+        "model": "opencode-go/glm-5.3-flash",
+        "disabled": false,
+        "thinking": "medium",
         "defaultContext": "fresh",
         "systemPromptMode": "replace",
         "inheritProjectContext": false
@@ -54,5 +67,18 @@
       }
     }
   },
-  "hideThinkingBlock": true
+  "avtc-pi-notifications": {
+    "bell": true,
+    "bellDelay": "30s",
+    "telegram": {
+      "enabled": true,
+      "chatId": "5732158113",
+      "delay": "45s",
+      "includePrompt": true,
+      "includeToolErrors": true,
+      "includeLeaf": false,
+      "includeStarted": true
+    }
+  },
+  "hideThinkingBlock": false
 }

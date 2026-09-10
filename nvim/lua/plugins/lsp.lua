@@ -14,6 +14,7 @@ function nvim_lspconfig.config()
     "clangd",
     "basedpyright",
     -- "texlab",
+    -- "djls",
     "tinymist",
     "copilot",
   }
