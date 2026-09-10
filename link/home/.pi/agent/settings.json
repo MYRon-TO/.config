@@ -30,7 +30,8 @@
         "+src/index.ts"
       ]
     },
-    "npm:avtc-pi-notification"
+    "npm:avtc-pi-notification",
+    "npm:@hk_net/remote-pi"
   ],
   "subagents": {
     "defaultModel": "gpt-5.6-sol",
