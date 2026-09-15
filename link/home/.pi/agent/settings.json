@@ -5,7 +5,12 @@
   "defaultThinkingLevel": "low",
   "theme": "catppuccin-mocha",
   "packages": [
-    "git:github.com/dbachelder/pi-btw",
+    {
+      "source": "git:github.com/dbachelder/pi-btw",
+      "extensions": [
+        "+extensions/btw.ts"
+      ]
+    },
     "npm:@marckrenn/pi-sub-bar",
     "npm:@ifi/pi-plan",
     {
@@ -31,7 +36,12 @@
       ]
     },
     "npm:avtc-pi-notification",
-    "npm:@hk_net/remote-pi"
+    {
+      "source": "npm:@hk_net/remote-pi",
+      "extensions": [
+        "-dist/extension.js"
+      ]
+    }
   ],
   "subagents": {
     "defaultModel": "gpt-5.6-sol",
@@ -43,9 +53,9 @@
         "defaultContext": "fresh"
       },
       "reviewer": {
-        "model": "opencode-go/glm-5.3-flash",
+        "model": "opencode-go/deepseek-v4.1-flash",
         "disabled": false,
-        "thinking": "medium",
+        "thinking": "high",
         "defaultContext": "fresh",
         "systemPromptMode": "replace",
         "inheritProjectContext": false
@@ -80,5 +90,5 @@
       "includeStarted": true
     }
   },
-  "hideThinkingBlock": false
+  "hideThinkingBlock": true
 }
