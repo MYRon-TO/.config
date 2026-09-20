@@ -5,6 +5,7 @@ return {
     KeyBind(MainMod .. " + V", Exec("noctalia msg panel-toggle clipboard"))
     KeyBind(MainMod .. " + SHIFT + V", Exec("noctalia msg panel-toggle launcher /emo"))
     KeyBind(MainMod .. " + C", Exec("noctalia msg panel-toggle launcher /calc"))
+    KeyBind(MainMod .. " + SHIFT + C", Exec("noctalia msg panel-toggle launcher /tr"))
     KeyBind("XF86AudioRaiseVolume", Exec("noctalia msg volume-up"),
       { repeating = true, locked = true })
     KeyBind("XF86AudioLowerVolume", Exec("noctalia msg volume-down"),
