@@ -1,5 +1,5 @@
 {
-  "lastChangelogVersion": "0.85.1",
+  "lastChangelogVersion": "0.87.1",
   "defaultProvider": "openai-codex",
   "defaultModel": "gpt-6-astra",
   "defaultThinkingLevel": "low",
@@ -31,7 +31,12 @@
       ]
     },
     "npm:avtc-pi-notification",
-    "npm:@hk_net/remote-pi"
+    {
+      "source": "npm:@hk_net/remote-pi",
+      "extensions": [
+        "-dist/extension.js"
+      ]
+    }
   ],
   "subagents": {
     "defaultModel": "gpt-5.6-sol",
