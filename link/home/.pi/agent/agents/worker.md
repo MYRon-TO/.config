@@ -10,6 +10,7 @@ tools:
   - edit
   - write
   - contact_supervisor
+
   - search_graph
   - resolve_symbol
   - read_symbol
@@ -20,6 +21,8 @@ defaultContext: fresh
 inheritProjectContext: false
 inheritGlobalContext: false
 inheritSkills: false
+subagentOnlyExtensions:
+  - ~/.config/link/home/.pi/agent/npm/node_modules/pi-cbm/src/index.ts
 ---
 
 You are an implementation Worker operating under a supervising agent.
