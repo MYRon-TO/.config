@@ -14,7 +14,7 @@
 
     pnpm
     python315
-    nodejs_25
+    nodejs_26
 
     cmake
 
@@ -71,6 +71,8 @@
       "cabextract"
 
       "pi-coding-agent"
+
+      "pdfpc"
     ];
 
     # `brew install --cask`
@@ -96,6 +98,8 @@
       "Sikarugir-App/sikarugir/sikarugir"
 
       "hammerspoon"
+
+      "font-zhuque-fangsong"
     ];
   };
 }
