@@ -1,0 +1,20 @@
+{ lib, pkgs, ... }:
+{
+  imports = [ /etc/nixos-home/default.nix ];
+
+  home.username = "myron";
+  home.homeDirectory = "/home/myron";
+  home.stateVersion = "26.05";
+  nixpkgs.config.allowUnfree = true;
+
+  # Ordinary definitions override the administrator's mkDefault values.
+  programs.zsh.shellAliases.ll = "ls -alh --group-directories-first";
+  programs.git.settings = {
+    user.name = "Your Name";
+    user.email = "you@example.com";
+  };
+
+  # Add personal packages independently of the system package list.
+  home.packages = lib.mkAfter [ pkgs.hello ];
+  # programs.tmux.mouse = false;
+}
