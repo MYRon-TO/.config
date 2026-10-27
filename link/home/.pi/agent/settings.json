@@ -44,7 +44,8 @@
       "skills": [
         "-skills/agent-network/SKILL.md"
       ]
-    }
+    },
+    "npm:pi-context-view"
   ],
   "subagents": {
     "defaultModel": "gpt-6.1-sol",
