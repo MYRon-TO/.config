@@ -56,10 +56,17 @@ KeyBind(MainMod .. " + P", hl.dsp.workspace.toggle_special())
 KeyBind(MainMod .. " + SHIFT + P", hl.dsp.window.move({ workspace = "special" }))
 
 -- Media / brightness
-KeyBind("XF86AudioRaiseVolume", Exec("wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+"), { repeating = true })
-KeyBind("XF86AudioLowerVolume", Exec("wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-"), { repeating = true })
 KeyBind("XF86MonBrightnessUp", Exec("brightnessctl -s +5%"))
 KeyBind("XF86MonBrightnessDown", Exec("brightnessctl -s 5%-"))
+
+-- 媒体播放控制
+KeyBind("XF86AudioPlay",  Exec("playerctl play-pause"))
+KeyBind("XF86AudioPause", Exec("playerctl play-pause"))
+KeyBind("XF86AudioNext",  Exec("playerctl next"))
+KeyBind("XF86AudioPrev",  Exec("playerctl previous"))
+KeyBind("XF86AudioStop",  Exec("playerctl stop"))
+KeyBind("XF86AudioRaiseVolume", Exec("wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+"), { repeating = true })
+KeyBind("XF86AudioLowerVolume", Exec("wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-"), { repeating = true })
 
 -- Screenshots
 KeyBind("Print", Exec([[slurp | grim -g - - | wl-copy]]))
