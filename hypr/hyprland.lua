@@ -40,7 +40,7 @@ hl.config({
       color = 0x88313244,
       color_inactive = 0x33313244,
       offset = "3 3",
-      scale = 3,
+      scale = 2.0,
     },
   },
 
