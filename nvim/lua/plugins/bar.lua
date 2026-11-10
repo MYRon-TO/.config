@@ -10,8 +10,11 @@ local scrollbar = {
     require("scrollbar").setup({
       set_highlights = true,
       scrollbar = {
+        show = true,
         visibility = "all",
         unit = "screenline",
+        max_lines = false,
+        hide_if_all_visible = false,
         thumb = {
           text = " ",
           blend = 30,

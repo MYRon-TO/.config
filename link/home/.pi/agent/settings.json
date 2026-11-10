@@ -1,16 +1,10 @@
 {
-  "lastChangelogVersion": "1.3.0",
+  "lastChangelogVersion": "1.4.0",
   "defaultProvider": "openai-codex",
   "defaultModel": "gpt-6-astra",
   "defaultThinkingLevel": "low",
   "theme": "catppuccin-mocha",
   "packages": [
-    {
-      "source": "git:github.com/dbachelder/pi-btw",
-      "extensions": [
-        "+extensions/btw.ts"
-      ]
-    },
     "npm:@marckrenn/pi-sub-bar",
     "npm:@ifi/pi-plan",
     {
@@ -40,8 +34,12 @@
       "source": "npm:@hk_net/remote-pi",
       "extensions": [
         "-dist/extension.js"
+      ],
+      "skills": [
+        "-skills/agent-network/SKILL.md"
       ]
-    }
+    },
+    "npm:pi-context-view"
   ],
   "subagents": {
     "defaultModel": "gpt-6.1-sol",

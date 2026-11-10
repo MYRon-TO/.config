@@ -41,6 +41,9 @@ export MANPATH=$MANPATH:/usr/local/texlive/2024/texmf-dist/doc/man
 export INFOPATH=$INFOPATH:/usr/local/texlive/2024/texmf-dist/doc/info
 export PATH=/usr/local/texlive/2024/bin/x86_64-linux:$PATH
 
+# * waylandqq
+export QQ_WAYLAND_FIX_QQ=/usr/bin/qq
+
 # * npm
 # PATH="$HOME/.local/bin:$PATH"
 # export npm_config_prefix="$HOME/.local"

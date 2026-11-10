@@ -17,6 +17,7 @@ link/home/.pi/agent/**
 !link/home/.pi/agent/extensions/**
 !link/home/.pi/agent/agents
 !link/home/.pi/agent/agents/**
+!link/home/.pi/agent/agents/web-search.json
 link/home/.pi/web-search-cache
 
 link/home/.hammerspoon/Spoons/**
