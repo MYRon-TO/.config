@@ -73,6 +73,8 @@
       "pi-coding-agent"
 
       "pdfpc"
+
+      "qemu" # vm
     ];
 
     # `brew install --cask`
