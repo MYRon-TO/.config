@@ -1,15 +1,18 @@
 {
-  "lastChangelogVersion": "0.74.0",
+  "lastChangelogVersion": "1.4.0",
   "defaultProvider": "openai-codex",
-  "defaultModel": "gpt-5.5",
-  "defaultThinkingLevel": "medium",
+  "defaultModel": "gpt-6-astra",
+  "defaultThinkingLevel": "low",
   "theme": "catppuccin-mocha",
   "packages": [
-    "git:github.com/dbachelder/pi-btw",
     "npm:@marckrenn/pi-sub-bar",
     "npm:@ifi/pi-plan",
-    "npm:@venomzen/pi-web-access-enhanced",
-    "npm:pi-worktree",
+    {
+      "source": "npm:pi-worktree",
+      "extensions": [
+        "+extensions/worktree.ts"
+      ]
+    },
     "git:https://github.com/hasit/pi-community-themes",
     "npm:pi-hashline-readmap",
     {
@@ -17,7 +20,74 @@
       "extensions": [
         "+index.ts"
       ]
-    }
+    },
+    "npm:@tmustier/pi-usage-extension",
+    "npm:pi-web-access",
+    {
+      "source": "npm:pi-cbm",
+      "extensions": [
+        "+src/index.ts"
+      ]
+    },
+    "npm:avtc-pi-notification",
+    {
+      "source": "npm:@hk_net/remote-pi",
+      "extensions": [
+        "-dist/extension.js"
+      ],
+      "skills": [
+        "-skills/agent-network/SKILL.md"
+      ]
+    },
+    "npm:pi-context-view"
   ],
+  "subagents": {
+    "defaultModel": "gpt-6.1-sol",
+    "disableBuiltins": true,
+    "agentOverrides": {
+      "worker": {
+        "model": "openai-codex/gpt-6.1-sol",
+        "thinking": "medium",
+        "defaultContext": "fresh"
+      },
+      "reviewer": {
+        "model": "opencode-go/deepseek-v4.1-flash",
+        "disabled": false,
+        "thinking": "high",
+        "defaultContext": "fresh",
+        "systemPromptMode": "replace",
+        "inheritProjectContext": false
+      },
+      "planner": {
+        "disabled": true
+      },
+      "oracle": {
+        "disabled": true
+      },
+      "researcher": {
+        "disabled": true
+      },
+      "context-builder": {
+        "disabled": true
+      },
+      "delegate": {
+        "disabled": true
+      }
+    }
+  },
+  "avtc-pi-notifications": {
+    "bell": true,
+    "bellDelay": "30s",
+    "telegram": {
+      "enabled": true,
+      "chatId": "5732158113",
+      "token": "REMOVED_TOKEN",
+      "delay": "45s",
+      "includePrompt": true,
+      "includeToolErrors": true,
+      "includeLeaf": false,
+      "includeStarted": true
+    }
+  },
   "hideThinkingBlock": false
 }

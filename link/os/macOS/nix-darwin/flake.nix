@@ -4,7 +4,7 @@
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
 
-    pi.url = "github:lukasl-dev/pi.nix";
+    # pi.url = "github:lukasl-dev/pi.nix";
 
     # home-manager, used for managing user configuration
     home-manager = {

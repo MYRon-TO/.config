@@ -39,6 +39,13 @@
 
     # doc
     typst
+    obsidian
+
+    #fonts
+    source-han-serif-vf-otf
+    source-han-sans-vf-otf
+    source-han-serif
+    source-han-sans
   ];
 
   programs = {

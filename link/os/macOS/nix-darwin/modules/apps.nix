@@ -1,4 +1,4 @@
-{pkgs, pi, ...}: {
+{pkgs, ...}: {
   nixpkgs.config.allowUnfree = true; # Allow unfree packages;
 
   # Install packages from nix's official package repository.
@@ -14,11 +14,13 @@
 
     pnpm
     python315
-    nodejs_25
+    nodejs_26
 
     cmake
 
-    pi.packages.${pkgs.stdenv.hostPlatform.system}.coding-agent
+    fd
+
+    # pi.packages.${pkgs.stdenv.hostPlatform.system}.coding-agent
   ];
   environment.variables.EDITOR = "nvim";
 
@@ -67,6 +69,12 @@
       "opencode" # ai-agent
 
       "cabextract"
+
+      "pi-coding-agent"
+
+      "pdfpc"
+
+      "qemu" # vm
     ];
 
     # `brew install --cask`
@@ -92,6 +100,8 @@
       "Sikarugir-App/sikarugir/sikarugir"
 
       "hammerspoon"
+
+      "font-zhuque-fangsong"
     ];
   };
 }

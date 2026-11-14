@@ -11,6 +11,7 @@
         "ctx7sk-b37cb44b-dcdf-469e-9e3b-cac2a6666b2a"
       ],
       "enabled": true
-    }
+    },
+    "codebase-memory-mcp": {"command":["/Users/myron/.local/bin/codebase-memory-mcp"],"type":"local"}
   }
 }

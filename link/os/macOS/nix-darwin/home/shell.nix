@@ -37,6 +37,7 @@
       lg = "lazygit";
       py = "python3";
       ll = "ls -al";
+      pia="pi -e git:https://github.com/nicobailon/pi-subagents.git --append-system-prompt ~/.pi/agent/prompts/subagent.md";
       split_wallpaper = "python ~/.script/split_wallpaper.py";
       earphone = "bluetoothctl connect 88:C9:E8:BA:C1:8C";
       keyboard = "bluetoothctl connect F1:EF:01:DE:A7:D6";

@@ -1,0 +1,19 @@
+{
+  "timeoutMs": 3600000,
+  "toolTimeoutMs": 1200000,
+  "toolDescriptionMode": "compact",
+  "asyncByDefault": false,
+  "maxSubagentDepth": 1,
+  "parallel": {
+    "maxTasks": 6,
+    "concurrency": 2
+  },
+  "completionBatch": {
+    "enabled": true,
+    "debounceMs": 3000,
+    "maxWaitMs": 10000,
+    "stragglerDebounceMs": 1500,
+    "stragglerMaxWaitMs": 5000,
+    "stragglerWindowMs": 10000
+  }
+}

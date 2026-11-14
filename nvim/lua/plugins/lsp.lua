@@ -13,7 +13,9 @@ function nvim_lspconfig.config()
     "lua_ls",
     "clangd",
     "basedpyright",
+    "ts_ls",
     -- "texlab",
+    -- "djls",
     "tinymist",
     "copilot",
   }
@@ -72,6 +74,7 @@ local mason = {
 
         "rust-analyzer",
         "basedpyright",
+        "typescript-language-server",
         "lua-language-server",
         "tinymist",
         "copilot-language-server"
