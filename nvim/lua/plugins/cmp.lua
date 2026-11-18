@@ -1,4 +1,4 @@
-vim.opt.iskeyword = "_,49-57,A-Z,a-z"
+vim.opt.iskeyword = "@,_,49-57,A-Z,a-z"
 
 local luasnip = {
   'L3MON4D3/LuaSnip',

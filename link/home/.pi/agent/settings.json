@@ -1,7 +1,7 @@
 {
-  "lastChangelogVersion": "1.4.0",
+  "lastChangelogVersion": "1.5.2",
   "defaultProvider": "openai-codex",
-  "defaultModel": "gpt-6-astra",
+  "defaultModel": "gpt-6.2-astra",
   "defaultThinkingLevel": "low",
   "theme": "catppuccin-mocha",
   "packages": [
@@ -42,11 +42,11 @@
     "npm:pi-context-view"
   ],
   "subagents": {
-    "defaultModel": "gpt-6.1-sol",
+    "defaultModel": "gpt-6.2-sol",
     "disableBuiltins": true,
     "agentOverrides": {
       "worker": {
-        "model": "openai-codex/gpt-6.1-sol",
+        "model": "openai-codex/gpt-6.2-sol",
         "thinking": "medium",
         "defaultContext": "fresh"
       },
