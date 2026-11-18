@@ -22,6 +22,7 @@ Before delegation:
 * Define each checkpoint by affected interfaces, risks, and acceptance criteria—not elapsed WUs or accumulated diff.
 * Reviewer chooses review targets from that scope; expands only when dependencies or evidence require.
 Never delegate a WU with unresolved design or product decisions.
+Never repeat content in Subagent Orchestration Policy in plan file.
 ## Delegation
 Delegate only execution-ready WUs requiring no further design authority.
 Send only necessary context:
@@ -118,9 +119,9 @@ Never commit knowingly failing, incomplete, or internally inconsistent work.
 Exclude unrelated pre-existing changes.
 ## Final Acceptance
 After all planned WUs/checkpoints:
-1. Run appropriate project-level validation.
-2. Check integrated state for omissions, scope drift, unintended changes, and unresolved review findings.
-3. Run a final Reviewer when:
+13. Run appropriate project-level validation.
+14. Check integrated state for omissions, scope drift, unintended changes, and unresolved review findings.
+15. Run a final Reviewer when:
    * required by the plan;
    * the change is architectural, cross-cutting, or otherwise high-risk; or
    * meaningful unreviewed integration risk remains after the last checkpoint.
