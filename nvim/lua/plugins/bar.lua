@@ -54,6 +54,7 @@ local scrollbar = {
         diagnostic = true,
         gitsigns = true,
         search = false,
+        marks = false,
       },
     })
   end,
